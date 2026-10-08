@@ -1,0 +1,131 @@
+Egress: GR, run 2026-10-08T22:14:03.621Z, chromium new-headless
+
+| # | group | site | html lang A | A | B | C | D | E | F | G | en hreflang | switcher |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | pl | allegro.pl | pl | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | 0 | no |
+| 2 | pl | olx.pl | pl | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 3 | pl | onet.pl | pl | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 4 | pl | wp.pl | pl | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 5 | pl | gov.pl | pl-PL | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 6 | pl | zus.pl | pl-PL | pl | pl | pl | pl | pl ↪hreflang | pl | en ↪link | 1 | yes |
+| 7 | pl | mbank.pl | pl-PL | pl | pl | pl | pl | pl | pl | pl | 0 | yes |
+| 8 | pl | pkobp.pl | pl | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 9 | pl | ing.pl | pl | pl | pl | pl | pl | pl | pl | pl ↪link | 0 | no |
+| 10 | pl | santander.pl | pl | pl | pl | pl | pl | pl | pl | pl | 0 | no |
+| 11 | pl | intercity.pl | pl | pl | pl | pl | pl | pl | en ↪path | en | 0 | yes |
+| 12 | pl | lot.com | pl | pl | en | pl | en | en | en | en | 58 | no |
+| 13 | pl | inpost.pl | pl | pl | pl | en | en | en ↪hreflang | en | en | 1 | yes |
+| 14 | pl | ceneo.pl |  | BLK(200) | BLK(200) | BLK(200) | BLK(200) | BLK(200) | BLK(200) | BLK(200) | 0 | no |
+| 15 | pl | empik.com | pl | pl | pl | pl | pl | pl | pl | pl ↪link | 0 | yes |
+| 16 | pl | otodom.pl | pl | pl | pl | pl | pl | HTTP404 | HTTP404 | HTTP404 | 1 | no |
+| 17 | pl | pyszne.pl | pl | pl | en | pl | en | en | en | en | 1 | no |
+| 18 | pl | mediaexpert.pl | pl | pl | pl | pl | pl | pl | pl | pl ↪link | 0 | yes |
+| 19 | pl | uw.edu.pl | pl-PL | pl | pl | pl | pl | pl | pl | en ↪link | 0 | yes |
+| 20 | pl | pw.edu.pl | pl | pl | ERR | pl | ERR | ERR | ERR | ERR | 0 | yes |
+| 21 | global | google.com | pl-GR | pl | el | pl | el | el | el | en ↪link | 0 | yes |
+| 22 | global | youtube.com | pl-PL | pl | en | pl | en | en | en | en | 0 | yes |
+| 23 | global | wikipedia.org | pl | pl | pl | en | en | en | en | en | 0 | yes |
+| 24 | global | microsoft.com | el-GR | el | el | el | el | el | en ↪path | en | 0 | no |
+| 25 | global | learn.microsoft.com | pl-pl | pl | en | pl | en | en | en | en | 0 | yes |
+| 26 | global | apple.com | en-US | en | en | en | en | en | en | en | 61 | no |
+| 27 | global | ikea.com | en | en | en | en | en | en | en | en | 47 | yes |
+| 28 | global | booking.com |  | en | en | en | en | en | en | en | 0 | no |
+| 29 | global | airbnb.com | pl | pl | en | pl | en | en | en | en | 12 | yes |
+| 30 | global | open.spotify.com | pl | pl | en | pl | en | en | en | en | 0 | yes |
+| 31 | global | netflix.com | en | en | en | en | en | en | en | en | 0 | yes |
+| 32 | global | aliexpress.com | en | en | en | en | en | en | en | en | 3 | yes |
+| 33 | global | paypal.com | el-GR | el | el | el | el | el | el | el | 0 | no |
+| 34 | global | docs.github.com | en | en | en | en | en | en | en | en | 0 | yes |
+| 35 | global | developer.mozilla.org | en-US | en | en | en | en | en | en | en | 0 | no |
+| 36 | de | amazon.de | pl-pl | pl | en | pl | en | en | en | en | 0 | yes |
+| 37 | de | zalando.de | de-DE | de | en | de | en | en | en | en | 3 | yes |
+| 38 | de | bahn.de | de | de | de | de | de | en ↪hreflang | en | en | 1 | yes |
+| 39 | fr | lemonde.fr | fr | fr | fr | fr | fr | en ↪hreflang | en | en | 4 | yes |
+| 40 | fr | sncf-connect.com | fr-fr | fr | fr | fr | fr | en ↪hreflang | en | en | 2 | no |
+| 41 | es | renfe.com | es | es | es | es | es | en ↪hreflang | en | en | 1 | yes |
+| 42 | es | elpais.com | es-ES | es | es | es | es | es | es | es | 0 | no |
+| 43 | it | trenitalia.com | it | it | it | it | it | it | it | en ↪link | 0 | yes |
+| 44 | it | corriere.it | it-IT | it | it | it | it | it | it | it | 0 | no |
+| 45 | nl | bol.com |  | ERR | ERR | BLK(200) | ERR | ERR | ERR | ERR | 0 | no |
+| 46 | nl | ns.nl | nl | nl | nl | nl | nl | en ↪hreflang | en | en | 1 | yes |
+| 47 | cz | alza.cz | pl-pl | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | BLK(403) | 0 | no |
+| 48 | ua | rozetka.com.ua | uk | uk | uk | uk | uk | uk | uk | uk | 0 | no |
+| 49 | jp | rakuten.co.jp | ja | ja | ja | ja | ja | ja | ja | ja | 0 | no |
+| 50 | br | mercadolivre.com.br | pt-BR | pt | pt | pt | pt | pt | pt | pt | 0 | no |
+
+**All sites** — 50 sites, 46 loaded (not blocked/error in A or D)
+
+| variant | reach en | of loaded |
+|---|---|---|
+| A | 7 | 15% |
+| B | 15 | 33% |
+| C | 9 | 20% |
+| D | 17 | 37% |
+| E | 22 | 48% |
+| F | 24 | 52% |
+| G | 28 | 61% |
+
+B gains over A: lot.com, pyszne.pl, youtube.com, learn.microsoft.com, airbnb.com, open.spotify.com, amazon.de, zalando.de
+C gains over A: inpost.pl, wikipedia.org
+D gains over B: inpost.pl, wikipedia.org
+E gains over D: bahn.de, lemonde.fr, sncf-connect.com, renfe.com, ns.nl
+F gains over E: intercity.pl, microsoft.com
+G gains over F: zus.pl, uw.edu.pl, google.com, trenitalia.com
+
+**Polish sites** — 20 sites, 18 loaded (not blocked/error in A or D)
+
+| variant | reach en | of loaded |
+|---|---|---|
+| A | 0 | 0% |
+| B | 2 | 11% |
+| C | 1 | 6% |
+| D | 3 | 17% |
+| E | 3 | 17% |
+| F | 4 | 22% |
+| G | 6 | 33% |
+
+B gains over A: lot.com, pyszne.pl
+C gains over A: inpost.pl
+D gains over B: inpost.pl
+E gains over D: -
+F gains over E: intercity.pl
+G gains over F: zus.pl, uw.edu.pl
+
+### Not English after G
+
+- allegro.pl (pl): blocked (status 403, "allegro.pl") · D lang=none html=en final=https://allegro.pl/ · enHreflang=0 switcher=none
+- olx.pl (pl): D lang=pl html=pl final=https://www.olx.pl/ · enHreflang=0 switcher=none
+- onet.pl (pl): D lang=pl html=pl final=https://www.onet.pl/ · enHreflang=0 switcher=none
+- wp.pl (pl): D lang=pl html=pl final=https://www.wp.pl/ · enHreflang=0 switcher=none
+- gov.pl (pl): D lang=pl html=pl-PL final=https://www.gov.pl/ · enHreflang=0 switcher=none
+- mbank.pl (pl): D lang=pl html=pl-PL final=https://www.mbank.pl/indywidualny/ · enHreflang=0 switcher=attr:stopka - sekcja portali społecznościowyc
+- pkobp.pl (pl): D lang=pl html=pl final=https://www.pkobp.pl/ · enHreflang=0 switcher=none
+- ing.pl (pl): D lang=pl html=pl final=https://www.ing.pl/ · enHreflang=0 switcher=none
+- santander.pl (pl): D lang=pl html=pl final=https://www.erste.pl/klient-indywidualny?sr=1 · enHreflang=0 switcher=none
+- ceneo.pl (pl): blocked (status 200, "") · D lang=none html= final=https://www.ceneo.pl/Captcha/Add?ReturnUrl=%252F&CookieAge=172800 · enHreflang=0 switcher=none
+- empik.com (pl): D lang=pl html=pl final=https://www.empik.com/ · enHreflang=0 switcher=attr:Repetytorium ósmoklasisty - język polski
+- otodom.pl (pl): D lang=pl html=pl final=https://www.otodom.pl/ · enHreflang=1 switcher=none
+- mediaexpert.pl (pl): D lang=pl html=pl final=https://www.mediaexpert.pl/ · enHreflang=0 switcher=attr:Tłumacz języka migowego
+- pw.edu.pl (pl): error: page.goto: Timeout 30000ms exceeded. · D lang=undefined html=undefined final=undefined · enHreflang=0 switcher=none
+- paypal.com (global): D lang=el html=el-GR final=https://www.paypal.com/gr/home · enHreflang=0 switcher=none
+- elpais.com (es): D lang=es html=es-ES final=https://elpais.com/ · enHreflang=0 switcher=none
+- corriere.it (it): D lang=it html=it-IT final=https://www.corriere.it/ · enHreflang=0 switcher=none
+- bol.com (nl): error: variant timeout 75000ms · D lang=undefined html=undefined final=undefined · enHreflang=0 switcher=none
+- alza.cz (cz): blocked (status 403, "Just a moment...") · D lang=cs html=en-us final=https://www.alza.cz/ · enHreflang=0 switcher=none
+- rozetka.com.ua (ua): D lang=uk html=uk final=https://rozetka.com.ua/ · enHreflang=0 switcher=none
+- rakuten.co.jp (jp): D lang=ja html=ja final=https://www.rakuten.co.jp/ · enHreflang=0 switcher=none
+- mercadolivre.com.br (br): D lang=pt html=pt-BR final=https://www.mercadolivre.com.br/ · enHreflang=0 switcher=none
+
+### Pitfalls
+
+- zus.pl: hreflang en-US → https://www.zus.pl/en/ gave pl
+- ing.pl: switcher link https://www.ing.pl/premium gave pl
+- lot.com: final URL A=https://www.lot.com/gr/pl D=https://www.lot.com/gr/en
+- inpost.pl D: html lang "pl" but text detected en (0.53)
+- empik.com: switcher link https://www.empik.com/prasa/obcojezyczna-angielski?mh=prasa_19-english_2-sg gave pl
+- pyszne.pl: final URL A=https://www.pyszne.pl/ D=https://www.pyszne.pl/en
+- mediaexpert.pl: switcher link https://www.mediaexpert.pl/telewizory-i-rtv/zestaw-tv-i-soundbar gave pl
+- learn.microsoft.com: final URL A=https://learn.microsoft.com/pl-pl/ D=https://learn.microsoft.com/en-us/
+- booking.com: final URL A=https://www.booking.com/index.pl.html?aid=304142&label=mkt123sc-7d257bb3-898d-4739-b296-6df56a850a28&chal_t=1791497277671&force_referer= D=https://www.booking.com/?chal_t=1791497294986&force_referer=
+- airbnb.com: final URL A=https://pl.airbnb.com/ D=https://www.airbnb.com/
+- zalando.de: final URL A=https://www.zalando.de/ D=https://en.zalando.de/?_rfl=de

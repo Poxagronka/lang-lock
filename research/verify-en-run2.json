@@ -1,0 +1,955 @@
+{
+ "meta": {
+  "lang": "en",
+  "date": "2026-10-08T22:50:36.311Z"
+ },
+ "results": [
+  {
+   "group": "pl",
+   "url": "https://allegro.pl/",
+   "status": 403,
+   "finalUrl": "https://allegro.pl/",
+   "lang": "none",
+   "conf": 0,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "403 https://allegro.pl/"
+   ],
+   "loop": false,
+   "blocked": true,
+   "snippet": ""
+  },
+  {
+   "group": "pl",
+   "url": "https://www.olx.pl/",
+   "status": 200,
+   "finalUrl": "https://www.olx.pl/",
+   "lang": "pl",
+   "conf": 0.68,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.olx.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do głównej części Przejdź do stopki Czat Powiadomienia Twoje konto Dodaj ogłoszenie Dla biznesu opens in a new t"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.onet.pl/",
+   "status": 200,
+   "finalUrl": "https://www.onet.pl/",
+   "lang": "pl",
+   "conf": 0.74,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.onet.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Warszawa 17 Sprawdź prognozę na jutro Szukaj SUBSKRYBUJ LOGOWANIE PILNE Nocny atak na Ukrainę. Myśliwce w powietrzu, syr"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.wp.pl/",
+   "status": 200,
+   "finalUrl": "https://www.wp.pl/",
+   "lang": "pl",
+   "conf": 0.76,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.wp.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Zaloguj Cenimy Twoją prywatność Kliknij \"AKCEPTUJĘ I PRZECHODZĘ DO SERWISU\", aby wyrazić zgodę na korzystanie w Internec"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.gov.pl/",
+   "status": 200,
+   "finalUrl": "https://www.gov.pl/",
+   "lang": "pl",
+   "conf": 0.77,
+   "htmlLang": "pl-PL",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.gov.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do sekcji Aktualności Przejdź do sekcji Stopka gov.pl Strona główna gov.pl Rada Ministrów Kancelaria Premiera Mi"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.zus.pl/",
+   "status": 200,
+   "finalUrl": "https://lang.zus.pl/",
+   "lang": "en",
+   "conf": 0.89,
+   "htmlLang": "en-US",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499632457,
+    "from": "https://www.zus.pl/",
+    "to": "https://lang.zus.pl/"
+   },
+   "navs": [
+    "200 https://www.zus.pl/",
+    "200 https://lang.zus.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Go to content Go to site map Contact Change language PL - Polish EN - English UA - Ukrainian Register into PUE/eZUS Log "
+  },
+  {
+   "group": "pl",
+   "url": "https://www.mbank.pl/",
+   "status": 200,
+   "finalUrl": "https://www.mbank.pl/en/",
+   "lang": "en",
+   "conf": 1,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499639836,
+    "from": "https://www.mbank.pl/indywidualny/",
+    "to": "https://www.mbank.pl/en/"
+   },
+   "navs": [
+    "301 https://www.mbank.pl/",
+    "200 https://www.mbank.pl/indywidualny/",
+    "200 https://www.mbank.pl/en/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "go to content go to main menu go to searchbar back to Polish version back to Polish version of the website security abou"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.pkobp.pl/",
+   "status": 200,
+   "finalUrl": "https://www.pkobp.pl/en",
+   "lang": "en",
+   "conf": 0.94,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499641426,
+    "from": "https://www.pkobp.pl/",
+    "to": "https://www.pkobp.pl/en"
+   },
+   "navs": [
+    "200 https://www.pkobp.pl/",
+    "200 https://www.pkobp.pl/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź to głównej części strony Go to pkobp.pl About us International bankingOnline banking EN Log in 3Q 2025 financial"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.ing.pl/",
+   "status": 200,
+   "finalUrl": "https://en.ing.pl/",
+   "lang": "en",
+   "conf": 0.91,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499641332,
+    "from": "https://www.ing.pl/",
+    "to": "https://en.ing.pl/"
+   },
+   "navs": [
+    "200 https://www.ing.pl/",
+    "200 https://en.ing.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Wyświetlono stronę ING Bank Śląski Return to Homepage Company profile ING Bank Śląski The world is changing, so we still"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.santander.pl/",
+   "status": 200,
+   "finalUrl": "https://www.erste.pl/en/about-erste",
+   "lang": "en",
+   "conf": 0.97,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499639794,
+    "from": "https://www.erste.pl/klient-indywidualny?sr=1",
+    "to": "https://www.erste.pl/en/about-erste"
+   },
+   "navs": [
+    "308 https://www.santander.pl/",
+    "301 https://www.erste.pl/?sr=1",
+    "200 https://www.erste.pl/klient-indywidualny?sr=1",
+    "200 https://www.erste.pl/en/about-erste"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Go to main menu Go to search Go to log in Go to content Home page Erste Bank Polska Search on the site Branches and ATMs"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.intercity.pl/",
+   "status": 200,
+   "finalUrl": "https://www.intercity.pl/en/",
+   "lang": "en",
+   "conf": 0.6,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499643382,
+    "from": "https://www.intercity.pl/pl/",
+    "to": "https://www.intercity.pl/en/"
+   },
+   "navs": [
+    "301 https://www.intercity.pl/",
+    "301 http://www.intercity.pl/pl/",
+    "200 https://www.intercity.pl/pl/",
+    "200 https://www.intercity.pl/en/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Consent Details About This website uses cookies We use cookies to personalise content and ads, to provide social media f"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.lot.com/",
+   "status": 200,
+   "finalUrl": "https://www.lot.com/gr/en",
+   "lang": "en",
+   "conf": 0.95,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://www.lot.com/",
+    "200 https://www.lot.com/gr/en/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Skip to flight search Skip to main menu Skip to footer Miles & More Greece (EUR) Log in Book Check-"
+  },
+  {
+   "group": "pl",
+   "url": "https://inpost.pl/",
+   "status": 200,
+   "finalUrl": "https://inpost.pl/",
+   "lang": "en",
+   "conf": 0.53,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://inpost.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Your privacy We use essential cookies and similar technologies that are necessary for the proper functioning of the serv"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.ceneo.pl/",
+   "status": 200,
+   "finalUrl": "https://www.ceneo.pl/Captcha/Add?ReturnUrl=%252F&CookieAge=172800",
+   "lang": "none",
+   "conf": 0,
+   "htmlLang": "",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://www.ceneo.pl/",
+    "200 https://www.ceneo.pl/Captcha/Add?ReturnUrl=%252F&CookieAge=172800"
+   ],
+   "loop": false,
+   "blocked": true,
+   "snippet": "Przejdź dalej © 2005-2026 Ceneo.pl sp. z o.o. Korzystanie z serwisu oznacza akceptację regulaminu"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.empik.com/",
+   "status": 200,
+   "finalUrl": "https://www.empik.com/",
+   "lang": "pl",
+   "conf": 0.74,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.empik.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Kategorie Jesienne okazje do -40% Szkolne okazje do -40% Zaloguj się Promocje Jesień do -40% Podręczniki szkolne Top 100"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.otodom.pl/",
+   "status": 200,
+   "finalUrl": "https://www.otodom.pl/",
+   "lang": "pl",
+   "conf": 0.75,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.otodom.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Kupuję Wynajmuję Sprzedaję Rynek pierwotny Firmy Moje konto Dodaj ogłoszenie Adresujemy marzenia Znajdź dom, który Ci od"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.pyszne.pl/",
+   "status": 200,
+   "finalUrl": "https://www.pyszne.pl/en",
+   "lang": "en",
+   "conf": 0.87,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "307 https://www.pyszne.pl/",
+    "200 https://www.pyszne.pl/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Corporate Ordering Become a courier Partner with us Log in Order food and more Restaurants deliveri"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.mediaexpert.pl/",
+   "status": 200,
+   "finalUrl": "https://www.mediaexpert.pl/",
+   "lang": "pl",
+   "conf": 0.64,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.mediaexpert.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do głównej zawartości Przejdź do wyszukiwarki Przejdź do kontaktu Darmowa dostawa od 99 zł Odbiór za godzinę Dos"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.uw.edu.pl/",
+   "status": 200,
+   "finalUrl": "https://www.uw.edu.pl/",
+   "lang": "pl",
+   "conf": 0.62,
+   "htmlLang": "pl-PL",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.uw.edu.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "TREŚĆ STRONY MENU GŁÓWNE WYSZUKIWARKA SOCIAL MEDIA STOPKA STRONY Włącz wysoki kontrast A A A EN KALENDARZ AKADEMICKI BUW"
+  },
+  {
+   "group": "pl",
+   "url": "https://www.pw.edu.pl/",
+   "status": 200,
+   "finalUrl": "https://www.pw.edu.pl/",
+   "lang": "pl",
+   "conf": 0.79,
+   "htmlLang": "pl",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.pw.edu.pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do treści MENU ELEKTRONICZNEJ POLITECHNIKI WARSZAWSKIEJ INFORMACJA O FINANSOWANIU PROJEKTU STRONY Politechnika W"
+  },
+  {
+   "group": "global",
+   "url": "https://www.google.com/",
+   "status": 200,
+   "finalUrl": "https://www.google.com/?hl=en",
+   "lang": "en",
+   "conf": 0.96,
+   "htmlLang": "en-GR",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499665821,
+    "from": "https://www.google.com/",
+    "to": "https://www.google.com/?hl=en"
+   },
+   "navs": [
+    "200 https://www.google.com/",
+    "200 https://www.google.com/?hl=en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "GmailImages Sign in AI Mode Google offered in: Ελληνικά Greece About Advertising Business How Search works Privacy Terms"
+  },
+  {
+   "group": "global",
+   "url": "https://www.youtube.com/",
+   "status": 200,
+   "finalUrl": "https://www.youtube.com/",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.youtube.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "GR Skip navigation Sign in Home Shorts Subscriptions You History Sign in to like videos, comment, and subscribe. Sign in"
+  },
+  {
+   "group": "global",
+   "url": "https://www.wikipedia.org/",
+   "status": 200,
+   "finalUrl": "https://www.wikipedia.org/",
+   "lang": "en",
+   "conf": 0.86,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.wikipedia.org/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Wikipedia The Free Encyclopedia English 7,249,000+ articles 日本語 1,521,000+ 記事 Deutsch 3.156.000+ Artikel Français 2 783 "
+  },
+  {
+   "group": "global",
+   "url": "https://www.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://www.microsoft.com/en-us",
+   "lang": "en",
+   "conf": 0.95,
+   "htmlLang": "en-US",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499671401,
+    "from": "https://www.microsoft.com/el-gr",
+    "to": "https://www.microsoft.com/en-us"
+   },
+   "navs": [
+    "302 https://www.microsoft.com/",
+    "200 https://www.microsoft.com/el-gr",
+    "200 https://www.microsoft.com/en-us"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content We use optional cookies to improve your experience on our websites, such as through social media co"
+  },
+  {
+   "group": "global",
+   "url": "https://learn.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://learn.microsoft.com/en-us/",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en-us",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://learn.microsoft.com/",
+    "200 https://learn.microsoft.com/en-us/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content We use optional cookies to improve your experience on our websites, such as through social media co"
+  },
+  {
+   "group": "global",
+   "url": "https://www.apple.com/",
+   "status": 200,
+   "finalUrl": "https://www.apple.com/",
+   "lang": "en",
+   "conf": 0.96,
+   "htmlLang": "en-US",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.apple.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Επίλεξε μια άλλη χώρα ή περιοχή, για να δεις περιεχόμενο σχετικό με την τοποθεσία σου. Ελλάδα Συνέχεια Apple Apple Store"
+  },
+  {
+   "group": "global",
+   "url": "https://www.ikea.com/",
+   "status": 200,
+   "finalUrl": "https://www.ikea.com/",
+   "lang": "en",
+   "conf": 0.44,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.ikea.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Stories Jobs Newsroom Our business Welcome to IKEA Global! IKEA and XBOX Game on (the sofa) with YX"
+  },
+  {
+   "group": "global",
+   "url": "https://www.booking.com/",
+   "status": 200,
+   "finalUrl": "https://www.booking.com/index.en-gb.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaFyIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4Ap67oNYGwAIB0gIkNDNkMzYzNGQtOTk3Mi00MzJkLTllNzAtMGM5MTY0ZTg5ZDg22AIB4AIB&chal_t=1791499676652&force_referer=",
+   "lang": "en",
+   "conf": 0.93,
+   "htmlLang": "en-gb",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "202 https://www.booking.com/",
+    "301 https://www.booking.com/?chal_t=1791499676652&force_referer=",
+    "200 https://www.booking.com/index.en-gb.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaFyIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4Ap67oNYGwAIB0gIkNDNkMzYzNGQtOTk3Mi00MzJkLTllNzAtMGM5MTY0ZTg5ZDg22AIB4AIB&chal_t=1791499676652&force_referer="
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content EUR List your property Register Sign in Stays Flights Flight + Hotel Car rental Attractions Airport"
+  },
+  {
+   "group": "global",
+   "url": "https://www.airbnb.com/",
+   "status": 200,
+   "finalUrl": "https://www.airbnb.com/",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.airbnb.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to content Airbnb homepage All All Homes Homes Experiences Experiences Services Services Where When Add dates Who A"
+  },
+  {
+   "group": "global",
+   "url": "https://open.spotify.com/",
+   "status": 200,
+   "finalUrl": "https://open.spotify.com/",
+   "lang": "en",
+   "conf": 0.96,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://open.spotify.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content ⌘ShiftL Premium Support Download Install App Sign up Log in Your Library Create your first playlist"
+  },
+  {
+   "group": "global",
+   "url": "https://www.netflix.com/",
+   "status": 200,
+   "finalUrl": "https://www.netflix.com/gr-en/",
+   "lang": "en",
+   "conf": 0.97,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://www.netflix.com/",
+    "200 https://www.netflix.com/gr-en/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Netflix Select Language Ελληνικά English Sign In Entertainment for every moment Starts at EUR 8.99. Cancel anytime. Read"
+  },
+  {
+   "group": "global",
+   "url": "https://www.aliexpress.com/",
+   "status": 200,
+   "finalUrl": "https://www.aliexpress.com/",
+   "lang": "en",
+   "conf": 0.89,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.aliexpress.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to Main content Keyboard shortcuts Search opt + / Cart shift + opt + C Show/Hide shortcuts shift + opt + Z To move "
+  },
+  {
+   "group": "global",
+   "url": "https://www.paypal.com/",
+   "status": 200,
+   "finalUrl": "https://www.paypal.com/gr/home?locale.x=en_GR",
+   "lang": "en",
+   "conf": 1,
+   "htmlLang": "en-GR",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499690185,
+    "from": "https://www.paypal.com/gr/home",
+    "to": "https://www.paypal.com/gr/home?locale.x=en_GR"
+   },
+   "navs": [
+    "302 https://www.paypal.com/",
+    "200 https://www.paypal.com/gr/home",
+    "200 https://www.paypal.com/gr/home?locale.x=en_GR"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Personal Business Send and request money pay securely Check out your way Shop at some of the world’s biggest brands with"
+  },
+  {
+   "group": "global",
+   "url": "https://docs.github.com/",
+   "status": 200,
+   "finalUrl": "https://docs.github.com/en",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://docs.github.com/",
+    "200 https://docs.github.com/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Skip to content GitHub Docs Select your plan: Free, Pro, & Team Search or ask Copilot / English Sig"
+  },
+  {
+   "group": "global",
+   "url": "https://developer.mozilla.org/",
+   "status": 200,
+   "finalUrl": "https://developer.mozilla.org/en-US/",
+   "lang": "en",
+   "conf": 0.95,
+   "htmlLang": "en-US",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://developer.mozilla.org/",
+    "200 https://developer.mozilla.org/en-US/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Skip to search HTML CSS JavaScript Web APIs All Learn Tools About Blog MDN Resources for Developers"
+  },
+  {
+   "group": "de",
+   "url": "https://www.amazon.de/",
+   "status": 200,
+   "finalUrl": "https://www.amazon.de/",
+   "lang": "en",
+   "conf": 0.95,
+   "htmlLang": "en-gb",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "202 https://www.amazon.de/",
+    "200 https://www.amazon.de/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Cookies and Advertising Choices If you agree, we may use your personal information from any of these Amazon services to "
+  },
+  {
+   "group": "de",
+   "url": "https://www.zalando.de/",
+   "status": 200,
+   "finalUrl": "https://en.zalando.de/?_rfl=de",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en-GB",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "302 https://www.zalando.de/",
+    "200 https://en.zalando.de/?_rfl=de"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Skip to search Skip to Zalando Assistant Get 20% off our top designer and premium brands! Code SPEC"
+  },
+  {
+   "group": "de",
+   "url": "https://www.bahn.de/",
+   "status": 200,
+   "finalUrl": "https://int.bahn.de/en",
+   "lang": "en",
+   "conf": 0.94,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499699415,
+    "from": "https://www.bahn.de/",
+    "to": "https://int.bahn.de/en"
+   },
+   "navs": [
+    "200 https://www.bahn.de/",
+    "200 https://int.bahn.de/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to connection search Skip to main content Private trips Business trips Help & contact EN Main navigation Tickets & "
+  },
+  {
+   "group": "fr",
+   "url": "https://www.lemonde.fr/",
+   "status": 200,
+   "finalUrl": "https://www.lemonde.fr/en/",
+   "lang": "en",
+   "conf": 0.82,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499701776,
+    "from": "https://www.lemonde.fr/",
+    "to": "https://www.lemonde.fr/en/"
+   },
+   "navs": [
+    "200 https://www.lemonde.fr/",
+    "200 https://www.lemonde.fr/en/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Content Menu Search Footer Date: Friday, October 9, 2026 Time: 12:48 am (Paris) Go Back to the HomePage Le Monde Go Back"
+  },
+  {
+   "group": "fr",
+   "url": "https://www.sncf-connect.com/",
+   "status": 200,
+   "finalUrl": "https://www.sncf-connect.com/en-en",
+   "lang": "en",
+   "conf": 0.97,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499703658,
+    "from": "https://www.sncf-connect.com/",
+    "to": "https://www.sncf-connect.com/en-en"
+   },
+   "navs": [
+    "200 https://www.sncf-connect.com/",
+    "200 https://www.sncf-connect.com/en-en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Continue without agreeing → With your agreement, we and our 73 partners use cookies or similar technologies to store, ac"
+  },
+  {
+   "group": "es",
+   "url": "https://www.renfe.com/",
+   "status": 200,
+   "finalUrl": "https://www.renfe.com/es/en",
+   "lang": "en",
+   "conf": 0.95,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499704513,
+    "from": "https://www.renfe.com/es/es",
+    "to": "https://www.renfe.com/es/en"
+   },
+   "navs": [
+    "301 https://www.renfe.com/",
+    "200 https://www.renfe.com/es/es",
+    "200 https://www.renfe.com/es/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "English Search Help Log in Cercanías (Commuter) Travel Get inspired Manage your ticket Más Renfe Renfe Group Train ticke"
+  },
+  {
+   "group": "es",
+   "url": "https://elpais.com/",
+   "status": 200,
+   "finalUrl": "https://elpais.com/",
+   "lang": "es",
+   "conf": 0.43,
+   "htmlLang": "es-ES",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://elpais.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "It offers the following browsing modes Free browsing by accepting cookies This will involve the use of your browsing inf"
+  },
+  {
+   "group": "it",
+   "url": "https://www.trenitalia.com/",
+   "status": 200,
+   "finalUrl": "https://www.trenitalia.com/en.html",
+   "lang": "en",
+   "conf": 0.97,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499709954,
+    "from": "https://www.trenitalia.com/it.html",
+    "to": "https://www.trenitalia.com/en.html"
+   },
+   "navs": [
+    "301 https://www.trenitalia.com/",
+    "200 https://www.trenitalia.com/it.html",
+    "200 https://www.trenitalia.com/en.html"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Go to main content Group Companies Whistleblowing-report ENG Customer Area About us Connections Offers Services Loyalty "
+  },
+  {
+   "group": "it",
+   "url": "https://www.corriere.it/",
+   "status": 200,
+   "finalUrl": "https://www.corriere.it/",
+   "lang": "it",
+   "conf": 0.65,
+   "htmlLang": "it-IT",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.corriere.it/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Seguici su Venerdì 9 ottobre 2026 - Aggiornato alle 00:28 17 ° C - Milano Accedi Politica Esteri Opinioni Cronache Econo"
+  },
+  {
+   "group": "nl",
+   "url": "https://www.bol.com/",
+   "status": 403,
+   "finalUrl": "chrome-error://chromewebdata/",
+   "lang": "none",
+   "conf": 0,
+   "htmlLang": "en",
+   "navLang": "pl-PL",
+   "ext": null,
+   "navs": [
+    "200 https://www.bol.com/",
+    "403 https://www.bol.com/"
+   ],
+   "loop": false,
+   "blocked": true,
+   "snippet": "Access to www.bol.com was denied You don't have authorization to view this page. HTTP ERROR 403 Reload"
+  },
+  {
+   "group": "nl",
+   "url": "https://www.ns.nl/",
+   "status": 200,
+   "finalUrl": "https://www.ns.nl/en",
+   "lang": "en",
+   "conf": 0.98,
+   "htmlLang": "en",
+   "navLang": "en",
+   "ext": {
+    "at": 1791499718552,
+    "from": "https://www.ns.nl/",
+    "to": "https://www.ns.nl/en"
+   },
+   "navs": [
+    "200 https://www.ns.nl/",
+    "200 https://www.ns.nl/en"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Skip to main content Main navigation Go to the homepage of ns.nl Travel Open submenu Products Open submenu Service and c"
+  },
+  {
+   "group": "cz",
+   "url": "https://www.alza.cz/",
+   "status": 403,
+   "finalUrl": "https://www.alza.cz/",
+   "lang": "cs",
+   "conf": 1,
+   "htmlLang": "en-us",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "307 https://www.alza.cz/",
+    "403 https://www.alza.cz/"
+   ],
+   "loop": false,
+   "blocked": true,
+   "snippet": "Prosím, potvrďte, že jste z masa a kostí \"PÍP PÍP TUDŮT - Děkujeme\" Datum a čas 9.10.2026, 01:48:35 Ray ID a478b1a6dc78e"
+  },
+  {
+   "group": "ua",
+   "url": "https://rozetka.com.ua/",
+   "status": 200,
+   "finalUrl": "https://rozetka.com.ua/",
+   "lang": "uk",
+   "conf": 1,
+   "htmlLang": "uk",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://rozetka.com.ua/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Каталог Знайти На розпродаж Всі акції → Картка Rozetka Персональні знижки та бонуси Smart підписка Безкоштовна доставка "
+  },
+  {
+   "group": "jp",
+   "url": "https://www.rakuten.co.jp/",
+   "status": 200,
+   "finalUrl": "https://www.rakuten.co.jp/",
+   "lang": "ja",
+   "conf": 1,
+   "htmlLang": "ja",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.rakuten.co.jp/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "モバイル ランキング スーパーDEAL Fashion トラベル カード 証券 銀行 ブックス 電子書籍 ラクマ リーベイツ 楽天24 サービス一覧 Global 楽天に出店 ヘルプ 買い物かご お知らせ 閲覧履歴 お気に入り 購入履歴 m"
+  },
+  {
+   "group": "br",
+   "url": "https://www.mercadolivre.com.br/",
+   "status": 200,
+   "finalUrl": "https://www.mercadolivre.com.br/",
+   "lang": "pt",
+   "conf": 0.61,
+   "htmlLang": "pt-BR",
+   "navLang": "en",
+   "ext": null,
+   "navs": [
+    "200 https://www.mercadolivre.com.br/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Pular para o conteúdo Menu de atalhos Pular para Pular para o conteúdo Comentar sobre acessibilidade Atalhos do teclado "
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "lang-lock",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome MV3 extension that forces a chosen language on every site",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint --max-warnings 0 .",
+    "verify": "node scripts/verify.mjs",
+    "navcheck": "node scripts/navcheck.mjs",
+    "zip": "node scripts/zip.mjs",
+    "icons": "node scripts/icons.mjs",
+    "screenshots": "node scripts/screenshot.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "playwright": "^1.64.0"
+  }
+}

@@ -1,0 +1,136 @@
+{
+ "meta": {
+  "lang": "de",
+  "date": "2026-10-08T22:50:59.845Z"
+ },
+ "results": [
+  {
+   "group": "global",
+   "url": "https://www.google.com/",
+   "status": 200,
+   "finalUrl": "https://www.google.com/",
+   "lang": "de",
+   "conf": 0.91,
+   "htmlLang": "de-GR",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "200 https://www.google.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "GmailBilder Anmelden KI‑Modus Google gibt es auch auf: Ελληνικά Griechenland Über Google Werbeprogramme Unternehmen Wie "
+  },
+  {
+   "group": "global",
+   "url": "https://www.wikipedia.org/",
+   "status": 200,
+   "finalUrl": "https://www.wikipedia.org/",
+   "lang": "de",
+   "conf": 0.79,
+   "htmlLang": "de",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "200 https://www.wikipedia.org/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Wikipedia Die freie Enzyklopädie Deutsch 3.156.000+ Artikel English 7,249,000+ articles 日本語 1,521,000+ 記事 Français 2 783"
+  },
+  {
+   "group": "global",
+   "url": "https://www.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://www.microsoft.com/de-de",
+   "lang": "de",
+   "conf": 0.92,
+   "htmlLang": "de-DE",
+   "navLang": "de",
+   "ext": {
+    "at": 1791499843132,
+    "from": "https://www.microsoft.com/el-gr",
+    "to": "https://www.microsoft.com/de-de"
+   },
+   "navs": [
+    "302 https://www.microsoft.com/",
+    "200 https://www.microsoft.com/el-gr",
+    "200 https://www.microsoft.com/de-de"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Zu Hauptinhalt springen Wir verwenden optionale Cookies, um Ihre Erfahrung auf unseren Websites zu verbessern, z. B. dur"
+  },
+  {
+   "group": "global",
+   "url": "https://learn.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://learn.microsoft.com/de-de/",
+   "lang": "de",
+   "conf": 0.94,
+   "htmlLang": "de-de",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "302 https://learn.microsoft.com/",
+    "200 https://learn.microsoft.com/de-de/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Zu Hauptinhalt wechseln Wir verwenden optionale Cookies, um Ihre Erfahrung auf unseren Websites zu verbessern, z. B. dur"
+  },
+  {
+   "group": "global",
+   "url": "https://www.airbnb.com/",
+   "status": 200,
+   "finalUrl": "https://de.airbnb.com/",
+   "lang": "de",
+   "conf": 0.91,
+   "htmlLang": "de",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "200 https://www.airbnb.com/",
+    "302 https://de.airbnb.com/v2/domain_switch/handoff",
+    "200 https://de.airbnb.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Zu Inhalten springen Airbnb-Homepage Alles Alles Unterkünfte Unterkünfte Erlebnisse Erlebnisse Services Services Wohin W"
+  },
+  {
+   "group": "de",
+   "url": "https://www.bahn.de/",
+   "status": 200,
+   "finalUrl": "https://www.bahn.de/",
+   "lang": "de",
+   "conf": 0.93,
+   "htmlLang": "de",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "200 https://www.bahn.de/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Zur Verbindungssuche springen Zu den Hauptinhalten springen Privatreisen Geschäftsreisen Hilfe & Kontakt Verkehrsmeldung"
+  },
+  {
+   "group": "fr",
+   "url": "https://www.lemonde.fr/",
+   "status": 200,
+   "finalUrl": "https://www.lemonde.fr/",
+   "lang": "fr",
+   "conf": 0.7,
+   "htmlLang": "fr",
+   "navLang": "de",
+   "ext": null,
+   "navs": [
+    "200 https://www.lemonde.fr/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Contenu Menu Recherche Pied de page Le journal Services Retour à la page d’accueil Le Monde Retour à la page d’accueil"
+  }
+ ]
+}

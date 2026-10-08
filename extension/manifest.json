@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Lang Lock — Force Site Language",
+  "version": "1.0.0",
+  "description": "Make every site show the language you choose: Accept-Language, navigator.language and a safe redirect to the site's own translation.",
+  "permissions": ["storage", "declarativeNetRequest"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_icon": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" } },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["nav.js"], "run_at": "document_start", "all_frames": true, "world": "MAIN" },
+    { "matches": ["<all_urls>"], "js": ["lib.js", "rules.js", "content.js"], "run_at": "document_idle" }
+  ]
+}

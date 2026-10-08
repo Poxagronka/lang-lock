@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "lang": "pl",
+  "date": "2026-10-08T22:51:23.230Z"
+ },
+ "results": [
+  {
+   "group": "global",
+   "url": "https://www.google.com/",
+   "status": 200,
+   "finalUrl": "https://www.google.com/",
+   "lang": "pl",
+   "conf": 0.72,
+   "htmlLang": "pl-GR",
+   "navLang": "pl",
+   "ext": null,
+   "navs": [
+    "200 https://www.google.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "GmailGrafika Zaloguj się Tryb AI Korzystaj z Google w tych językach: Ελληνικά Grecja O nas Reklamuj się Dla firm Jak dzi"
+  },
+  {
+   "group": "global",
+   "url": "https://www.wikipedia.org/",
+   "status": 200,
+   "finalUrl": "https://www.wikipedia.org/",
+   "lang": "en",
+   "conf": 0.89,
+   "htmlLang": "en",
+   "navLang": "pl",
+   "ext": null,
+   "navs": [
+    "200 https://www.wikipedia.org/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Wikipedia The Free Encyclopedia English 7,249,000+ articles 日本語 1,521,000+ 記事 Deutsch 3.156.000+ Artikel Français 2 783 "
+  },
+  {
+   "group": "global",
+   "url": "https://www.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://www.microsoft.com/pl-pl",
+   "lang": "pl",
+   "conf": 0.81,
+   "htmlLang": "pl-PL",
+   "navLang": "pl",
+   "ext": {
+    "at": 1791499866498,
+    "from": "https://www.microsoft.com/el-gr",
+    "to": "https://www.microsoft.com/pl-pl"
+   },
+   "navs": [
+    "302 https://www.microsoft.com/",
+    "200 https://www.microsoft.com/el-gr",
+    "200 https://www.microsoft.com/pl-pl"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do głównej zawartości Używamy opcjonalnych plików cookie, aby zapewnić najwyższą funkcjonalność naszych witryn i"
+  },
+  {
+   "group": "global",
+   "url": "https://learn.microsoft.com/",
+   "status": 200,
+   "finalUrl": "https://learn.microsoft.com/pl-pl/",
+   "lang": "pl",
+   "conf": 0.75,
+   "htmlLang": "pl-pl",
+   "navLang": "pl",
+   "ext": null,
+   "navs": [
+    "302 https://learn.microsoft.com/",
+    "200 https://learn.microsoft.com/pl-pl/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do głównej zawartości Używamy opcjonalnych plików cookie, aby zapewnić najwyższą funkcjonalność naszych witryn i"
+  },
+  {
+   "group": "global",
+   "url": "https://www.airbnb.com/",
+   "status": 200,
+   "finalUrl": "https://pl.airbnb.com/",
+   "lang": "pl",
+   "conf": 0.71,
+   "htmlLang": "pl",
+   "navLang": "pl",
+   "ext": null,
+   "navs": [
+    "200 https://www.airbnb.com/",
+    "302 https://pl.airbnb.com/v2/domain_switch/handoff",
+    "200 https://pl.airbnb.com/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do treści Strona główna Airbnb Wszystko Wszystko Domy Domy Atrakcje Atrakcje Usługi Usługi Gdzie Kiedy Dodaj dat"
+  },
+  {
+   "group": "de",
+   "url": "https://www.bahn.de/",
+   "status": 200,
+   "finalUrl": "https://int.bahn.de/pl",
+   "lang": "pl",
+   "conf": 0.71,
+   "htmlLang": "pl",
+   "navLang": "pl",
+   "ext": {
+    "at": 1791499864851,
+    "from": "https://www.bahn.de/",
+    "to": "https://int.bahn.de/pl"
+   },
+   "navs": [
+    "200 https://www.bahn.de/",
+    "200 https://int.bahn.de/pl"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Przejdź do wyszukiwania połączeń Przejdź do głównego tekstu Podróże prywatne Podróże służbowe Pomoc i kontakt PL Nawigac"
+  },
+  {
+   "group": "fr",
+   "url": "https://www.lemonde.fr/",
+   "status": 200,
+   "finalUrl": "https://www.lemonde.fr/",
+   "lang": "fr",
+   "conf": 0.69,
+   "htmlLang": "fr",
+   "navLang": "pl",
+   "ext": null,
+   "navs": [
+    "200 https://www.lemonde.fr/"
+   ],
+   "loop": false,
+   "blocked": false,
+   "snippet": "Contenu Menu Recherche Pied de page Le journal Services Retour à la page d’accueil Le Monde Retour à la page d’accueil"
+  }
+ ]
+}
