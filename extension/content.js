@@ -27,7 +27,7 @@
   const candidates = [
     siteRule(location.href, target),
     LangLock.pickAlternate(alternates, target)?.href,
-    LangLock.rewriteLocaleUrl(location.href, target),
+    LangLock.rewriteLocaleUrl(location.href, target, pageLang),
   ].filter((u) => u && u !== location.href);
   if (!candidates.length) return;
 

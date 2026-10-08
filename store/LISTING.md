@@ -34,9 +34,9 @@ Lang Lock has one purpose: make websites show the language that the user picks. 
 
 | permission | why |
 |---|---|
-| `storage` | Keeps the chosen language (`chrome.storage.sync`) and a per-tab redirect time that prevents redirect loops (`chrome.storage.session`). |
+| `storage` | Keeps the chosen language (`chrome.storage.sync`) and a per-tab note of the last redirect (time, from and to URL) that prevents redirect loops and undoes a redirect to an error page (`chrome.storage.session`). |
 | `declarativeNetRequest` | One dynamic rule sets the `Accept-Language` request header to the chosen language. A second rule adds a `Server-Timing` response header to page documents that carries the language to the page script, so `navigator.language` is correct before any site script runs. |
-| host permission `<all_urls>` | The header rule and the content scripts must run on every site the user opens. The service worker also checks that a translated URL answers 2xx before it redirects. |
+| host permission `<all_urls>` | The header rule and the content scripts must run on every site the user opens. The service worker also sends `HEAD` (then `GET`) requests to check that a translated URL answers 2xx before it redirects. |
 | content scripts on `<all_urls>` | `nav.js` sets `navigator.language` at document start. `content.js` reads the page language and its `hreflang` links, and redirects to the translation once. |
 
 Remote code: none. All code ships in the package.

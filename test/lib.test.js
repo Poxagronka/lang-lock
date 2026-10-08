@@ -63,3 +63,17 @@ test('site rules', () => {
   assert.equal(siteRule('https://www.trenitalia.com/it.html', 'de'), 'https://www.trenitalia.com/de.html');
   assert.equal(siteRule('https://example.com/', 'en'), null);
 });
+
+test('a token that is not the page language is a word, not a locale', () => {
+  assert.equal(rewriteLocaleUrl('https://x.com/id/12345', 'en', 'pl'), null);
+  assert.equal(rewriteLocaleUrl('https://x.com/uk/shop', 'de', 'en'), null);
+  assert.equal(rewriteLocaleUrl('https://x.com/de/it/', 'en', 'de'), 'https://x.com/en/it/');
+  assert.equal(rewriteLocaleUrl('https://x.com/?lang=it&hl=pl', 'en', 'pl'), 'https://x.com/?lang=it&hl=en');
+  assert.equal(rewriteLocaleUrl('https://www.intercity.pl/pl/', 'en', 'pl-PL'), 'https://www.intercity.pl/en/');
+});
+
+test("Chrome's legacy detector codes match the popup tags", () => {
+  assert.ok(LangLock.sameLang('iw', 'he'));
+  assert.ok(LangLock.sameLang('no', 'nb'));
+  assert.equal(rewriteLocaleUrl('https://x.com/no/', 'nb', 'no'), null);
+});

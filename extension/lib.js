@@ -1,6 +1,11 @@
 // Pure helpers shared by the service worker, the content script and the node tests.
 
-const primary = (tag) => tag.split(/[-_]/)[0].toLowerCase();
+// Chrome's language detector still answers with the legacy codes "iw" (Hebrew) and "no" (Norwegian).
+const ALIASES = { iw: 'he', no: 'nb', in: 'id' };
+const primary = (tag) => {
+  const p = tag.split(/[-_]/)[0].toLowerCase();
+  return ALIASES[p] || p;
+};
 const sameLang = (a, b) => primary(a) === primary(b);
 
 // "pl-PL" -> ["pl-PL", "pl"], "en" -> ["en"].
@@ -35,14 +40,15 @@ function rewriteToken(tok, target) {
 }
 
 // Replace an existing locale token: path segment 2 then 1 ("/es/es" is country/language),
-// or a hl/lang/locale/language query value.
+// or a hl/lang/locale/language query value. A token counts only when it names the page's own
+// language (pageLang), so a word such as /id/ or /it/ is not taken for a locale.
 // Returns the new URL, or null when the URL has no token or already carries the target.
-function rewriteLocaleUrl(href, target) {
+function rewriteLocaleUrl(href, target, pageLang) {
   const u = new URL(href);
   const segs = u.pathname.split('/');
   for (const i of [2, 1]) {
     const tok = parseToken(segs[i]);
-    if (!tok) continue;
+    if (!tok || (pageLang && !sameLang(tok.lang, pageLang))) continue;
     if (sameLang(tok.lang, target)) return null;
     segs[i] = rewriteToken(tok, target);
     u.pathname = segs.join('/');
@@ -50,7 +56,7 @@ function rewriteLocaleUrl(href, target) {
   }
   for (const p of ['hl', 'lang', 'locale', 'language']) {
     const tok = parseToken(u.searchParams.get(p));
-    if (!tok) continue;
+    if (!tok || (pageLang && !sameLang(tok.lang, pageLang))) continue;
     if (sameLang(tok.lang, target)) return null;
     u.searchParams.set(p, rewriteToken(tok, target));
     return u.href;

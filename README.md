@@ -11,7 +11,7 @@ Pick a language in the popup (or "Off"). Lang Lock then works in three layers:
 3. **Redirect to the site's own translation.** `content.js` runs once per page in the top frame at `document_idle`. When `chrome.i18n.detectLanguage` on the page text (or `<html lang>` when the detection is not reliable) says the page is not in your language, it tries in this order:
    - a verified site rule from `rules.js` (Google `hl`, PayPal `locale.x`, Trenitalia, some Polish sites with an English section),
    - the `<link rel="alternate" hreflang>` that matches your language,
-   - a rewrite of a locale token that is already in the URL (`/el-gr/` → `/en-us/`, `?hl=pl` → `?hl=en`).
+   - a rewrite of a locale token that is already in the URL and names the page language (`/el-gr/` → `/en-us/`, `?hl=pl` → `?hl=en`), so a word such as `/id/` or `/it/` is left alone.
 
    The service worker checks each candidate with `HEAD` (then `GET`) and uses the first one that answers 2xx and does not bounce back. It redirects at most once per tab in 15 seconds and never twice from the same URL in a tab, so redirect loops cannot happen. If the redirect still lands on a 4xx page (a bot wall can answer the check with 2xx and the browser with 403), the page goes back to where it came from. It never guesses a token that is not in the URL and never clicks switcher links (research showed false positives).
 
