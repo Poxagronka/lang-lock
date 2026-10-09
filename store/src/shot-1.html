@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Screenshot 1. popup.png is the real extension/popup.html, captured by scripts/screenshot.mjs. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .stage { position: relative; height: 600px; }
+    .win { height: 100%; }
+    .page { padding: 40px 48px; }
+    .skel { height: 18px; border-radius: 9px; background: var(--soft); margin-bottom: 16px; }
+    .hero { height: 150px; border-radius: 14px; background: linear-gradient(120deg, #eff6ff, #e0e7ff); margin-bottom: 28px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .cards div { height: 120px; border-radius: 12px; background: var(--soft); }
+    .popup { position: absolute; top: 54px; right: 18px; border-radius: 12px; background: #fff; padding: 6px;
+      box-shadow: 0 30px 70px rgb(15 23 42 / 0.28), 0 0 0 1px rgb(15 23 42 / 0.06); }
+    .popup img { display: block; border-radius: 8px; }
+    .popup::before { content: ""; position: absolute; top: -8px; right: 22px; width: 16px; height: 16px; background: #fff; transform: rotate(45deg); }
+    .pill { position: absolute; left: 48px; bottom: 40px; display: flex; gap: 10px; }
+  </style>
+</head>
+<body>
+  <div class="shot">
+    <div>
+      <div class="brand"><img src="../../extension/icons/128.png" alt="">Lang Lock</div>
+      <h1>Pick one language. <em>Every site follows it.</em></h1>
+      <p class="lead">One click in the toolbar. Lang Lock sends it in Accept-Language, sets navigator.language and opens the site's own translation.</p>
+    </div>
+    <div class="stage">
+      <div class="win">
+        <div class="bar">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="url"><b>shop.example</b>/en/</div>
+          <div class="ext on"><img src="../../extension/icons/48.png" alt=""></div>
+        </div>
+        <div class="page">
+          <div class="skel" style="width: 40%"></div>
+          <div class="hero"></div>
+          <div class="cards"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+      <div class="popup"><img src="popup.png" alt=""></div>
+      <div class="pill"><span class="tag blue">English (en)</span><span class="tag after">✓ Applied on every site</span></div>
+    </div>
+  </div>
+</body>
+</html>

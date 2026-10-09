@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- Small promo tile, 440x280. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { width: 440px; height: 280px; color: #fff; background: radial-gradient(circle at 90% 0%, #60a5fa 0, transparent 55%), linear-gradient(150deg, #2563eb, #1e3a8a); }
+    .tile { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 36px; }
+    .top { display: flex; align-items: center; gap: 16px; }
+    .top img { width: 84px; height: 84px; margin: -10px; filter: drop-shadow(0 8px 16px rgb(15 23 42 / 0.35)); }
+    .name { font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+    .tag-line { margin-top: 22px; font-size: 22px; font-weight: 600; line-height: 1.3; }
+    .chips { display: flex; gap: 8px; margin-top: 18px; }
+    .chips span { padding: 4px 10px; border-radius: 999px; background: rgb(255 255 255 / 0.16); font-size: 14px; font-weight: 700; }
+    .chips .on { background: #fff; color: var(--blue-dark); }
+  </style>
+</head>
+<body>
+  <div class="tile">
+    <div class="top"><img src="../../extension/icons/128.png" alt=""><span class="name">Lang Lock</span></div>
+    <div class="tag-line">One language for every site.</div>
+    <div class="chips"><span>PL</span><span>EL</span><span>DE</span><span>→</span><span class="on">EN</span></div>
+  </div>
+</body>
+</html>

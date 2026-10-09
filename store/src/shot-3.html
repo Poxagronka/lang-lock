@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Screenshot 3: Accept-Language and navigator.language are set before page scripts run. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .panels { display: flex; flex-direction: column; gap: 26px; }
+    .card { background: #fff; border-radius: 14px; padding: 24px 28px; box-shadow: 0 18px 44px rgb(15 23 42 / 0.12); }
+    .card h3 { margin: 0 0 14px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+    .hdr { font-family: var(--mono); font-size: 20px; line-height: 1.7; }
+    .hdr .k { color: #7c3aed; }
+    .old { color: #94a3b8; text-decoration: line-through; }
+    .new { color: var(--blue-dark); font-weight: 700; background: #dbeafe; padding: 2px 8px; border-radius: 6px; }
+    .console { background: #0f172a; color: #e2e8f0; border-radius: 14px; padding: 24px 28px; font-family: var(--mono); font-size: 20px; line-height: 1.8;
+      box-shadow: 0 18px 44px rgb(15 23 42 / 0.25); }
+    .console h3 { margin: 0 0 10px; font: 600 15px -apple-system, sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; }
+    .p { color: #60a5fa; }
+    .s { color: #86efac; }
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .step { position: relative; background: #fff; border-radius: 12px; padding: 16px 18px; font-size: 16px; font-weight: 600; box-shadow: 0 8px 20px rgb(15 23 42 / 0.08); }
+    .step small { display: block; font-weight: 500; color: var(--muted); margin-top: 4px; font-size: 14px; }
+    .step.hot { background: var(--blue); color: #fff; }
+    .step.hot small { color: #dbeafe; }
+  </style>
+</head>
+<body>
+  <div class="shot">
+    <div>
+      <div class="brand"><img src="../../extension/icons/128.png" alt="">Lang Lock</div>
+      <h1>Works <em>before</em> the page loads</h1>
+      <p class="lead">The server gets your language in the first request. Page scripts see it from their first line.</p>
+    </div>
+    <div class="panels">
+      <div class="card">
+        <h3>Request headers</h3>
+        <div class="hdr"><span class="k">Accept-Language:</span> <span class="old">pl-PL,pl;q=0.9</span><br>
+          <span class="k">Accept-Language:</span> <span class="new">en-US,en;q=0.9</span></div>
+      </div>
+      <div class="console">
+        <h3>Console</h3>
+        <div><span class="p">&gt;</span> navigator.language</div>
+        <div class="s">&nbsp; 'en-US'</div>
+        <div><span class="p">&gt;</span> navigator.languages</div>
+        <div class="s">&nbsp; ['en-US', 'en']</div>
+      </div>
+      <div class="timeline">
+        <div class="step hot">1. Request<small>header is set</small></div>
+        <div class="step hot">2. document_start<small>navigator is set</small></div>
+        <div class="step">3. Page scripts<small>see your language</small></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

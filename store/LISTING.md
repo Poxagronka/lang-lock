@@ -53,5 +53,17 @@ English.
 
 ## Assets
 
-- Icon: `extension/icons/128.png`.
-- Screenshot 1280x800: `store/screenshot-1.png` (regenerate with `npm run screenshots`).
+All images come from HTML sources in `store/src/`. Regenerate them with `npm run icons` and `npm run screenshots`.
+
+| asset | file | size |
+|---|---|---|
+| Icon (96x96 artwork, 16 px transparent padding) | `extension/icons/128.png` | 128x128 |
+| Screenshot 1: "Pick one language. Every site follows it." (real popup) | `store/screenshot-1.png` | 1280x800 |
+| Screenshot 2: "Polish sites in English" (before and after) | `store/screenshot-2.png` | 1280x800 |
+| Screenshot 3: "Works before the page loads" (Accept-Language, navigator.language) | `store/screenshot-3.png` | 1280x800 |
+| Screenshot 4: "Follows the site's own translation" (hreflang, URL token) | `store/screenshot-4.png` | 1280x800 |
+| Screenshot 5: "No data. No account. No server." | `store/screenshot-5.png` | 1280x800 |
+| Small promo tile | `store/promo-small.png` | 440x280 |
+| Marquee promo tile | `store/promo-marquee.png` | 1400x560 |
+
+Screenshots and promo tiles are 24-bit PNG without alpha, as the store requires. The images use only fictional `.example` sites, no real brands.

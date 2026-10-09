@@ -1,0 +1,51 @@
+/* Shared styles for the store screenshots and promo tiles (rendered by scripts/screenshot.mjs). */
+:root {
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+  --soft: #f1f5f9;
+  --green: #16a34a;
+  --red: #dc2626;
+  --mono: "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  width: 1280px; height: 800px; overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 85% 10%, #dbeafe 0, transparent 45%), linear-gradient(160deg, #f8fafc 0%, #e0e7ff 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Two-column screenshot: text on the left, visual on the right. */
+.shot { display: grid; grid-template-columns: 430px 1fr; gap: 56px; align-items: center; height: 100%; padding: 0 72px; }
+.shot.stack { grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 36px; padding: 64px 72px 56px; align-items: start; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; color: var(--blue-dark); margin-bottom: 28px; }
+.brand img { width: 40px; height: 40px; }
+h1 { font-size: 52px; line-height: 1.08; letter-spacing: -1.5px; margin: 0 0 20px; }
+h1 em { font-style: normal; color: var(--blue); }
+.lead { font-size: 22px; line-height: 1.5; color: var(--muted); margin: 0; }
+.stack h1 { margin-bottom: 10px; }
+.stack .brand { margin-bottom: 18px; }
+
+/* Browser window mock. */
+.win { background: #fff; border-radius: 14px; box-shadow: 0 24px 60px rgb(15 23 42 / 0.18), 0 2px 6px rgb(15 23 42 / 0.08); overflow: hidden; }
+.bar { display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; background: var(--soft); border-bottom: 1px solid var(--line); }
+.dots { display: flex; gap: 7px; }
+.dots i { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; }
+.url { flex: 1; height: 30px; border-radius: 15px; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; padding: 0 14px; font-size: 15px; color: var(--muted); white-space: nowrap; overflow: hidden; }
+.url b { color: var(--ink); font-weight: 600; }
+.ext { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; }
+.ext.on { background: #dbeafe; }
+.ext img { width: 20px; height: 20px; }
+
+/* Small labels and chips. */
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
+.tag.before { background: #fee2e2; color: var(--red); }
+.tag.after { background: #dcfce7; color: var(--green); }
+.tag.blue { background: #dbeafe; color: var(--blue-dark); }
+.code { font-family: var(--mono); }
+.arrow { width: 64px; height: 64px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-size: 30px; font-weight: 700; box-shadow: 0 10px 24px rgb(37 99 235 / 0.35); }

@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- Lang Lock icon: a padlock whose body is a speech bubble with an "A文" glyph.
+     scripts/icons.mjs renders it at ?size=16|48|128. At 128 the artwork is 96x96 with 16 px transparent padding.
+     At 16 the bubble shows a bigger "A" only, so the glyph stays readable. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin: 0; background: transparent; }
+    svg { display: block; }
+    text { font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif; font-weight: 800; fill: #1d4ed8; }
+    .cjk { font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif; font-weight: 700; }
+    .small .big { display: none; }
+    .big-only { display: none; }
+    .small .big-only { display: inline; }
+    .small #art { transform: translate(-7px, -6px) scale(1.15); }
+  </style>
+</head>
+<body>
+  <svg id="icon" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3b82f6" />
+        <stop offset="1" stop-color="#1d4ed8" />
+      </linearGradient>
+    </defs>
+    <rect width="96" height="96" rx="20" fill="url(#bg)" />
+    <g id="art">
+    <!-- shackle -->
+    <path d="M32 44 V34 a16 16 0 0 1 32 0 V44" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" />
+    <!-- body: a speech bubble with a tail at the bottom left -->
+    <path d="M24 40 H72 a8 8 0 0 1 8 8 V70 a8 8 0 0 1 -8 8 H40 L28 87 V78 H24 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#fff" />
+    <g class="big">
+      <text x="34" y="69.5" font-size="27" text-anchor="middle">A</text>
+      <text class="cjk" x="61" y="68.5" font-size="24" text-anchor="middle">文</text>
+    </g>
+    <text class="big-only" x="48" y="73.5" font-size="38" text-anchor="middle">A</text>
+    </g>
+  </svg>
+  <script>
+    const size = Number(new URLSearchParams(location.search).get('size') || 128);
+    const art = size === 128 ? 96 : size;
+    const svg = document.getElementById('icon');
+    if (size < 32) document.body.classList.add('small');
+    svg.setAttribute('width', art);
+    svg.setAttribute('height', art);
+    svg.style.margin = `${(size - art) / 2}px`;
+  </script>
+</body>
+</html>

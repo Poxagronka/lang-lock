@@ -1,30 +1,30 @@
-// Renders the popup into a 1280x800 store screenshot: store/screenshot-1.png.
+// Renders the store images from store/src/*.html: store/screenshot-{1..5}.png (1280x800),
+// store/promo-small.png (440x280) and store/promo-marquee.png (1400x560).
+// First it captures the real extension/popup.html into store/src/popup.png for screenshot 1.
+import { chromium } from 'playwright';
 import { launch, setTarget } from './browser.mjs';
 
+const store = new URL('../store/', import.meta.url);
 const { ctx, sw } = await launch([], 'en-US');
-await setTarget(sw, 'pl');
-const id = new URL(sw.url()).host;
-const page = await ctx.newPage();
-await page.setViewportSize({ width: 1280, height: 800 });
-await page.goto(`chrome-extension://${id}/popup.html`);
-await page.waitForFunction(() => document.getElementById('lang').value === 'pl');
-await page.evaluate(() => {
-  const select = document.getElementById('lang');
-  select.size = 14;
-  const card = document.createElement('div');
-  card.append(...document.body.childNodes);
-  card.style.cssText = 'width:300px;padding:16px;background:#fff;border-radius:12px;box-shadow:0 10px 40px #0003';
-  const text = document.createElement('div');
-  text.innerHTML =
-    '<h1 style="font-size:44px;margin:0 0 16px">Lang Lock</h1>' +
-    '<p style="font-size:22px;line-height:1.5;color:#334155;margin:0">Pick one language.<br>Every site follows it:<br>' +
-    'Accept-Language, navigator.language<br>and the site\'s own translation.</p>';
-  document.body.style.cssText =
-    'width:auto;height:800px;margin:0;display:flex;align-items:center;justify-content:center;gap:96px;background:#e0e7ff';
-  card.style.zoom = '1.6';
-  text.style.width = '460px';
-  document.body.append(text, card);
-  select.scrollTop = ((select.selectedIndex - 6) * select.scrollHeight) / select.options.length;
-});
-await page.screenshot({ path: 'store/screenshot-1.png' });
+await setTarget(sw, 'en');
+const popup = await ctx.newPage();
+await popup.goto(`chrome-extension://${new URL(sw.url()).host}/popup.html`);
+await popup.waitForFunction(() => document.getElementById('lang').value === 'en');
+await popup.evaluate(() => (document.body.style.zoom = '1.6'));
+await popup.locator('body').screenshot({ path: new URL('src/popup.png', store).pathname });
 await ctx.close();
+
+const pages = [
+  ...[1, 2, 3, 4, 5].map((n) => [`shot-${n}`, `screenshot-${n}`, 1280, 800]),
+  ['promo-small', 'promo-small', 440, 280],
+  ['promo-marquee', 'promo-marquee', 1400, 560],
+];
+const browser = await chromium.launch({ channel: 'chromium', headless: true });
+const page = await browser.newPage();
+for (const [src, out, width, height] of pages) {
+  await page.setViewportSize({ width, height });
+  await page.goto(new URL(`src/${src}.html`, store).href);
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: new URL(`${out}.png`, store).pathname });
+}
+await browser.close();

@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Screenshot 4: redirect to the site's own translation via hreflang or the URL locale token. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flow { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .urls { display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr); gap: 18px; align-items: center; }
+    .u { background: #fff; border-radius: 14px; padding: 20px 22px; box-shadow: 0 18px 44px rgb(15 23 42 / 0.12); }
+    .u .addr { font-family: var(--mono); font-size: 17px; margin: 12px 0 14px; white-space: nowrap; }
+    .u mark { border-radius: 6px; padding: 1px 6px; font-weight: 700; }
+    .u.from mark { background: #fee2e2; color: var(--red); }
+    .u.to mark { background: #dcfce7; color: var(--green); }
+    .u .txt { font-size: 22px; font-weight: 700; }
+    .u .sub { font-size: 15px; color: var(--muted); margin-top: 4px; }
+    .steps { background: #fff; border-radius: 14px; padding: 8px 26px; box-shadow: 0 18px 44px rgb(15 23 42 / 0.12); }
+    .steps div { display: grid; grid-template-columns: 34px 1fr auto; gap: 14px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 18px; }
+    .steps div:last-child { border-bottom: 0; }
+    .n { width: 34px; height: 34px; border-radius: 50%; background: #dbeafe; color: var(--blue-dark); display: grid; place-items: center; font-weight: 800; font-size: 16px; }
+    .steps code { font-family: var(--mono); font-size: 15px; background: var(--soft); padding: 3px 8px; border-radius: 6px; color: #7c3aed; }
+    .ok { color: var(--green); font-weight: 700; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="shot">
+    <div>
+      <div class="brand"><img src="../../extension/icons/128.png" alt="">Lang Lock</div>
+      <h1>Follows the site's <em>own translation</em></h1>
+      <p class="lead">No machine translation. Lang Lock opens the version the site already has, checks that it exists, and moves you once.</p>
+    </div>
+    <div class="flow">
+      <div class="urls">
+        <div class="u from">
+          <span class="tag before">Greek page</span>
+          <div class="addr">travel.example/<mark>el-gr</mark>/</div>
+          <div class="txt">Προσφορές ταξιδιών</div>
+          <div class="sub">Κλείστε τώρα</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="u to">
+          <span class="tag after">English page</span>
+          <div class="addr">travel.example/<mark>en-us</mark>/</div>
+          <div class="txt">Travel deals</div>
+          <div class="sub">Book now</div>
+        </div>
+      </div>
+      <div class="steps">
+        <div><span class="n">1</span>Page language detected: Greek<span class="ok">≠ English</span></div>
+        <div><span class="n">2</span><span>Found <code>hreflang="en-us"</code> or a URL token</span><span class="ok">/en-us/</span></div>
+        <div><span class="n">3</span>Check the translated URL<span class="ok">200 OK</span></div>
+        <div><span class="n">4</span>Redirect once, never loop<span class="ok">done</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

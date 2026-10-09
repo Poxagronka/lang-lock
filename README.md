@@ -42,7 +42,7 @@ The MAIN world has no `chrome.storage`, and the value must be known synchronousl
 | `npm run verify -- <lang> [out.json] [urlFilter]` | Loads the unpacked extension in Chromium (new headless, Polish browser locale) and visits the 50 research sites. Results: `research/verify-<lang>.json`. |
 | `npm run navcheck` | Local checks: page scripts see the overridden `navigator.language` from their first line, and a redirect that lands on a 403 is undone. |
 | `npm run zip` | Builds `dist/lang-lock-<version>.zip` from `extension/` only. |
-| `npm run icons` / `npm run screenshots` | Regenerate the icons and the 1280x800 store screenshot. |
+| `npm run icons` / `npm run screenshots` | Render the icons and the store images (five 1280x800 screenshots, two promo tiles) from `store/src/`. |
 
 Research and the verification report live in `research/` (`FINDINGS.md`, `VERIFY.md`).
 
@@ -51,6 +51,6 @@ Research and the verification report live in `research/` (`FINDINGS.md`, `VERIFY
 1. Bump `version` in `extension/manifest.json` and `package.json`.
 2. Run `npm test`, `npm run lint`, then `npm run zip`.
 3. In the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole), create a new item and upload `dist/lang-lock-<version>.zip`.
-4. Fill the listing from `store/LISTING.md`: descriptions, category, single-purpose statement, permission justifications. Upload `extension/icons/128.png` and `store/screenshot-1.png`.
+4. Fill the listing from `store/LISTING.md`: descriptions, category, single-purpose statement, permission justifications. Upload the icon, screenshots and promo tiles listed in its Assets section.
 5. Host `store/PRIVACY.md` at a public URL (for example the GitHub file view) and paste the link as the privacy policy. Declare that no user data is collected.
 6. Submit for review. Expect a longer review because of the `<all_urls>` host permission.

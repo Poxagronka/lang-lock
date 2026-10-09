@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Screenshot 2: the same fake shop before (Polish) and after (English). No real brands. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pair { display: grid; grid-template-columns: 1fr 64px 1fr; gap: 28px; align-items: center; }
+    .col { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+    .win { width: 100%; }
+    .site { padding: 0 0 26px; }
+    .nav { display: flex; align-items: center; gap: 22px; padding: 18px 26px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; color: var(--ink); margin-right: auto; }
+    .logo i { width: 24px; height: 24px; border-radius: 7px; background: linear-gradient(135deg, #f59e0b, #ef4444); }
+    .hero { margin: 22px 26px 0; padding: 30px 28px; border-radius: 14px; background: linear-gradient(120deg, #fef3c7, #fde68a); }
+    .hero h2 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.5px; }
+    .hero p { margin: 0 0 20px; font-size: 16px; color: #78350f; }
+    .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 700; font-size: 15px; }
+    .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 26px 0; }
+    .row div { padding: 14px; border-radius: 10px; background: var(--soft); font-size: 14px; font-weight: 600; }
+    .row span { display: block; height: 56px; border-radius: 8px; background: #e2e8f0; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="shot stack">
+    <div>
+      <div class="brand"><img src="../../extension/icons/128.png" alt="">Lang Lock</div>
+      <h1>Polish sites <em>in English</em></h1>
+      <p class="lead">Your IP address says Poland. You still read the site in the language you picked.</p>
+    </div>
+    <div class="pair">
+      <div class="col">
+        <span class="tag before">Before</span>
+        <div class="win">
+          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url"><b>sklep.example</b>/pl/</div></div>
+          <div class="site">
+            <div class="nav"><div class="logo"><i></i>Sklepik</div>Strona główna<span>Produkty</span><span>Promocje</span></div>
+            <div class="hero"><h2>Witaj w naszym sklepie</h2><p>Darmowa dostawa od 100 zł</p><span class="btn">Kup teraz</span></div>
+            <div class="row"><div><span></span>Nowości</div><div><span></span>Bestsellery</div><div><span></span>Wyprzedaż</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col">
+        <span class="tag after">After</span>
+        <div class="win">
+          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url"><b>sklep.example</b>/en/</div>
+            <div class="ext on"><img src="../../extension/icons/48.png" alt=""></div></div>
+          <div class="site">
+            <div class="nav"><div class="logo"><i></i>Sklepik</div>Home<span>Products</span><span>Deals</span></div>
+            <div class="hero"><h2>Welcome to our store</h2><p>Free delivery over 100 zł</p><span class="btn">Shop now</span></div>
+            <div class="row"><div><span></span>New in</div><div><span></span>Best sellers</div><div><span></span>Sale</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
