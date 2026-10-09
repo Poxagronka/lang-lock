@@ -54,3 +54,9 @@ Research and the verification report live in `research/` (`FINDINGS.md`, `VERIFY
 4. Fill the listing from `store/LISTING.md`: descriptions, category, single-purpose statement, permission justifications. Upload the icon, screenshots and promo tiles listed in its Assets section.
 5. Host `store/PRIVACY.md` at a public URL (for example the GitHub file view) and paste the link as the privacy policy. Declare that no user data is collected.
 6. Submit for review. Expect a longer review because of the `<all_urls>` host permission.
+
+## Review status
+
+`npm run status` prints the review state of the store item: the submitted and published revisions with their versions, and the `takenDown` and `warned` flags. Add `-- --json` for the raw API response.
+
+Setup: create an OAuth client of type Desktop app in Google Cloud and save its JSON at `~/.config/lang-lock/client.json`. The first run opens a consent page in the browser. The refresh token is then kept in `~/.config/lang-lock/token.json`.

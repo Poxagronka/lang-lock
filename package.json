@@ -10,7 +10,8 @@
     "navcheck": "node scripts/navcheck.mjs",
     "zip": "node scripts/zip.mjs",
     "icons": "node scripts/icons.mjs",
-    "screenshots": "node scripts/screenshot.mjs"
+    "screenshots": "node scripts/screenshot.mjs",
+    "status": "node scripts/status.mjs"
   },
   "license": "MIT",
   "devDependencies": {
