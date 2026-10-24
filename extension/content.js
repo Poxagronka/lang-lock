@@ -16,8 +16,9 @@
   // Our redirect landed on an error page (a bot wall can answer 403 to the browser but 2xx to the check): go back.
   if (performance.getEntriesByType('navigation')[0]?.responseStatus >= 400) {
     const from = await chrome.runtime.sendMessage({ type: 'undo' });
+    await done(from ? `undo to ${from}` : 'error page, nothing to undo');
     if (from) location.replace(from);
-    return done(from ? `undo to ${from}` : 'error page, nothing to undo');
+    return;
   }
   if (sessionStorage.getItem(GUARD)) return done('already redirected from here in this tab');
   if (target === 'off') return;
