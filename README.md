@@ -55,6 +55,12 @@ Research and the verification report live in `research/` (`FINDINGS.md`, `VERIFY
 5. Host `store/PRIVACY.md` at a public URL (for example the GitHub file view) and paste the link as the privacy policy. Declare that no user data is collected.
 6. Submit for review. Expect a longer review because of the `<all_urls>` host permission.
 
+### Automatic publish
+
+`.github/workflows/publish.yml` runs after every merge to `main` that touches `extension/`. It runs lint and tests, builds the zip and runs `scripts/publish.mjs`. The script uploads the package and submits it for review only when the `manifest.json` version is newer than the store's submitted and published versions. To release, bump `version` in `extension/manifest.json` in the PR.
+
+Auth uses Workload Identity Federation, so no key is stored. GitHub OIDC for `Poxagronka/lang-lock` on `refs/heads/main` maps to the service account `lang-lock-publisher@mcp-sheets-sasha-2026.iam.gserviceaccount.com` (GCP project `mcp-sheets-sasha-2026`, pool `github`, provider `lang-lock`). Each run gets a fresh 1-hour token. The service account is added in the Developer Dashboard under Settings. A publisher can have only one service account.
+
 ## Review status
 
 `npm run status` prints the review state of the store item: the submitted and published revisions with their versions, and the `takenDown` and `warned` flags. Add `-- --json` for the raw API response.

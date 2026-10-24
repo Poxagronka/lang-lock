@@ -7,6 +7,9 @@ const primary = (tag) => {
   return ALIASES[p] || p;
 };
 const sameLang = (a, b) => primary(a) === primary(b);
+// The first page language that is not the target: <html lang> (the UI), then the text detector.
+// User text such as English titles on a Polish site must not hide a UI in another language.
+const pageLanguage = (htmlLang, textLang, target) => [htmlLang, textLang].find((l) => l && !sameLang(l, target));
 
 // "pl-PL" -> ["pl-PL", "pl"], "en" -> ["en"].
 function languageList(tag) {
@@ -75,6 +78,27 @@ function pickAlternate(alternates, target) {
   );
 }
 
-const LangLock = { primary, sameLang, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, pickAlternate };
+// Final URL of the first candidate that answers 2xx (HEAD, then GET) somewhere other than `from`.
+// A candidate that leads back to `from` is a dead end, except the URL token (`token`): a URL that names
+// the target language can reset a sticky site locale on a navigation, never on a fetch (cmux.com sets
+// its NEXT_LOCALE cookie only for Sec-Fetch-Dest: document). Then the token itself is the target.
+async function firstReachable(candidates, from, token, get = fetch) {
+  const here = from.split('#')[0];
+  let sticky = null;
+  for (const url of candidates) {
+    for (const method of ['HEAD', 'GET']) {
+      const credentials = new URL(url).origin === new URL(from).origin ? 'include' : 'omit';
+      const res = await get(url, { method, redirect: 'follow', credentials, signal: AbortSignal.timeout(4000) }).catch(() => null);
+      if (res?.ok) {
+        if (res.url !== here) return res.url;
+        if (url === token) sticky = url;
+        break;
+      }
+    }
+  }
+  return sticky;
+}
+
+const LangLock = { primary, sameLang, pageLanguage, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, pickAlternate, firstReachable };
 if (typeof module === 'object') module.exports = LangLock;
 else globalThis.LangLock = LangLock;

@@ -47,25 +47,12 @@ chrome.runtime.onInstalled.addListener(async () => {
 });
 chrome.storage.onChanged.addListener((changes) => changes.lang && applyRules());
 
-// Final URL of the first candidate that answers 2xx (HEAD, then GET) and does not bounce back to `from`.
-async function firstReachable(candidates, from) {
-  for (const url of candidates) {
-    for (const method of ['HEAD', 'GET']) {
-      const res = await fetch(url, { method, redirect: 'follow', credentials: 'include' }).catch(() => null);
-      if (res?.ok) {
-        if (res.url !== from) return res.url;
-        break;
-      }
-    }
-  }
-  return null;
-}
-
-async function redirectTarget(tabId, candidates, from) {
+async function redirectTarget(tabId, candidates, from, token) {
   const key = `tab${tabId}`;
   const now = Date.now();
-  if (now - ((await chrome.storage.session.get(key))[key]?.at || 0) < REDIRECT_PAUSE_MS) return null;
-  const url = await firstReachable(candidates, from);
+  const last = (await chrome.storage.session.get(key))[key];
+  if (last && new URL(last.to).origin === new URL(from).origin && now - last.at < REDIRECT_PAUSE_MS) return null;
+  const url = await LangLock.firstReachable(candidates, from, token);
   if (url) await chrome.storage.session.set({ [key]: { at: now, from, to: url } });
   return url;
 }
@@ -73,12 +60,12 @@ async function redirectTarget(tabId, candidates, from) {
 // The page we redirected from, when this tab just landed on our redirect target.
 async function undoTarget(tabId, url) {
   const last = (await chrome.storage.session.get(`tab${tabId}`))[`tab${tabId}`];
-  return last && last.to === url && Date.now() - last.at < REDIRECT_PAUSE_MS ? last.from : null;
+  return last && new URL(last.to).origin === new URL(url).origin && Date.now() - last.at < REDIRECT_PAUSE_MS ? last.from : null;
 }
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (!sender.tab) return false;
-  if (msg.type === 'redirect') redirectTarget(sender.tab.id, msg.candidates, sender.url).then(sendResponse);
+  if (msg.type === 'redirect') redirectTarget(sender.tab.id, msg.candidates, sender.url, msg.token).then(sendResponse);
   else if (msg.type === 'undo') undoTarget(sender.tab.id, sender.url).then(sendResponse);
   else return false;
   return true;

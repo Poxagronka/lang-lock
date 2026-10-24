@@ -4,7 +4,7 @@ const LangLock = require('../extension/lib.js');
 
 globalThis.LangLock = LangLock;
 const { siteRule } = require('../extension/rules.js');
-const { acceptLanguage, languageList, rewriteLocaleUrl, pickAlternate } = LangLock;
+const { acceptLanguage, languageList, rewriteLocaleUrl, pickAlternate, firstReachable, pageLanguage } = LangLock;
 
 test('Accept-Language value', () => {
   assert.equal(acceptLanguage('en'), 'en');
@@ -76,4 +76,41 @@ test("Chrome's legacy detector codes match the popup tags", () => {
   assert.ok(LangLock.sameLang('iw', 'he'));
   assert.ok(LangLock.sameLang('no', 'nb'));
   assert.equal(rewriteLocaleUrl('https://x.com/no/', 'nb', 'no'), null);
+});
+
+// A fake fetch: url -> final URL after redirects (status 200), or a number (that status, no redirect).
+const site = (map) => async (url) => {
+  const v = map[url];
+  return typeof v === 'number' ? { ok: v < 300, url } : { ok: true, url: v };
+};
+
+test('a sticky locale cookie: the URL token that leads back here is still the target', async () => {
+  // cmux.com with NEXT_LOCALE=pl: every fetch ends on /pl, but a navigation to /en resets the cookie.
+  const pl = 'https://cmux.com/pl';
+  const en = 'https://cmux.com/en';
+  const get = site({ 'https://cmux.com/': pl, [en]: pl, [`${en}#top`]: pl });
+  assert.equal(await firstReachable(['https://cmux.com/', en], pl, en, get), en);
+  // The tab URL keeps its fragment: a fetch that ends on /pl still leads back to /pl#top.
+  assert.equal(await firstReachable(['https://cmux.com/', `${en}#top`], `${pl}#top`, `${en}#top`, get), `${en}#top`);
+});
+
+test('a redirect back here is a dead end for a candidate that is not the URL token', async () => {
+  // aliexpress.com from Spain: hreflang en -> www.aliexpress.com -> 302 es.aliexpress.com.
+  const from = 'https://es.aliexpress.com/?gatewayAdapt=glo2esp';
+  assert.equal(await firstReachable(['https://www.aliexpress.com/'], from, null, site({ 'https://www.aliexpress.com/': from })), null);
+});
+
+test('a candidate that lands elsewhere still wins, and a 404 is never a target', async () => {
+  const get = site({ 'https://x.com/': 'https://x.com/pl', 'https://x.com/en': 'https://x.com/en', 'https://x.com/de': 404 });
+  assert.equal(await firstReachable(['https://x.com/', 'https://x.com/en'], 'https://x.com/pl', null, get), 'https://x.com/en');
+  assert.equal(await firstReachable(['https://x.com/de'], 'https://x.com/pl', 'https://x.com/de', get), null);
+});
+
+test('page language: the <html lang> UI wins over user text in the target language', () => {
+  assert.equal(pageLanguage('pl', 'en', 'en'), 'pl'); // pl.chaturbate.com: Polish UI, English room titles
+  assert.equal(pageLanguage('en', 'de', 'en'), 'de'); // a boilerplate lang="en" on a German page
+  assert.equal(pageLanguage('', 'pl', 'en'), 'pl');
+  assert.equal(pageLanguage('pl', null, 'en'), 'pl');
+  assert.equal(pageLanguage('en-US', 'en', 'en'), undefined);
+  assert.equal(pageLanguage('', null, 'en'), undefined);
 });

@@ -11,3 +11,21 @@ TAGS.map((t) => [names.of(t), t])
   .forEach(([name, t]) => select.add(new Option(`${name} (${t})`, t)));
 chrome.storage.sync.get('lang').then(({ lang }) => (select.value = lang || 'en'));
 select.addEventListener('change', () => chrome.storage.sync.set({ lang: select.value }));
+
+// Debug log: off by default. Records stay in chrome.storage.local until it is turned off.
+const debug = document.getElementById('debug');
+const copy = document.getElementById('copy');
+chrome.storage.sync.get('debug').then(({ debug: on }) => {
+  debug.checked = !!on;
+  copy.hidden = !on;
+});
+debug.addEventListener('change', () => {
+  copy.hidden = !debug.checked;
+  chrome.storage.sync.set({ debug: debug.checked });
+  if (!debug.checked) chrome.storage.local.remove('log');
+});
+copy.addEventListener('click', async () => {
+  const { log = [] } = await chrome.storage.local.get('log');
+  await navigator.clipboard.writeText(JSON.stringify(log, null, 1));
+  copy.textContent = `Copied ${log.length} entries`;
+});

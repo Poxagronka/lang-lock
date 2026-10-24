@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { margin: 0; padding: 12px 14px; font: 13px system-ui, sans-serif; width: 240px; color: #1f2937; background: #fff; }
+    body { position: relative; margin: 0; padding: 12px 14px; font: 13px system-ui, sans-serif; width: 240px; color: #1f2937; background: #fff; }
+    summary { position: absolute; top: 9px; right: 12px; list-style: none; cursor: pointer; color: #64748b; font-size: 15px; }
+    summary::-webkit-details-marker { display: none; }
     label { display: block; font-weight: 600; margin-bottom: 6px; }
     select { width: 100%; padding: 6px; font: inherit; border: 1px solid #cbd5e1; border-radius: 6px; }
     p { margin: 8px 0 0; color: #64748b; font-size: 12px; }
+    .row { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-weight: 400; }
+    button { margin-top: 6px; width: 100%; padding: 5px; font: inherit; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; cursor: pointer; }
   </style>
 </head>
 <body>
   <label for="lang">Lang Lock</label>
   <select id="lang"></select>
   <p>Reload a tab to apply.</p>
+  <details>
+    <summary title="Settings" aria-label="Settings">⚙</summary>
+    <label class="row"><input type="checkbox" id="debug"> Debug log</label>
+    <button id="copy" hidden>Copy debug log</button>
+  </details>
   <script src="popup.js"></script>
 </body>
 </html>
