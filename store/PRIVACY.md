@@ -6,6 +6,8 @@ Last updated: 2026-10-09.
 
 Nothing. Lang Lock has no server, no analytics, no telemetry and no ads. It does not store or send your browsing history, page content, cookies or personal data. It reads a sample of the page text only to detect the page language on your device.
 
+Debug log is an option in the popup, and it is off by default. When you turn it on, Lang Lock keeps its last 50 language decisions on your device: the page URL, the detected languages and the redirect result. It never sends them. You copy them yourself with the Copy debug log button. Turning the option off deletes them.
+
 ## What Lang Lock stores
 
 One setting: the language you pick in the popup (for example `en` or `off`). Chrome keeps it in `chrome.storage.sync`, so it follows your Chrome profile if you turn on Chrome sync. Lang Lock also keeps a short-lived note per tab in `chrome.storage.session` (the time of its last redirect in that tab, and the URLs it redirected from and to) to prevent redirect loops and to undo a redirect that lands on an error page. Lang Lock deletes the note when the tab closes, and Chrome deletes it when the browser closes.
