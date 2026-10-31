@@ -114,3 +114,15 @@ test('page language: the <html lang> UI wins over user text in the target langua
   assert.equal(pageLanguage('en-US', 'en', 'en'), undefined);
   assert.equal(pageLanguage('', null, 'en'), undefined);
 });
+
+test('rewriteLocaleHost swaps a locale subdomain', () => {
+  const { rewriteLocaleHost } = LangLock;
+  assert.deepEqual(rewriteLocaleHost('https://pl.example.com/a?q=1', 'en', 'pl'), [
+    'https://en.example.com/a?q=1',
+    'https://www.example.com/a?q=1',
+  ]);
+  assert.deepEqual(rewriteLocaleHost('https://pl.example.com/a?q=1', 'de', 'pl'), ['https://de.example.com/a?q=1']);
+  assert.deepEqual(rewriteLocaleHost('https://it.example.com/', 'en', 'en'), []);
+  assert.deepEqual(rewriteLocaleHost('https://pl.com/', 'en', 'pl'), []);
+  assert.deepEqual(rewriteLocaleHost('https://en.example.com/', 'en', 'pl'), []);
+});

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lang Lock — Force Site Language",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Make every site show the language you choose: Accept-Language, navigator.language and a safe redirect to the site's own translation.",
   "permissions": ["storage", "declarativeNetRequest"],
   "host_permissions": ["<all_urls>"],
