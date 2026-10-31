@@ -1,5 +1,14 @@
 # Redirect knowledge
 
+## Locale only in the subdomain (2026-10-31)
+
+- A search-results page had `<html lang="pl">`, no hreflang links and no locale token in path or query. The locale lived only in the host (`pl.example.com`).
+- Result: "no candidate URL", because no layer looked at the host.
+- Fix: `rewriteLocaleHost` in `extension/lib.js`. It swaps the leading host label when it names the page language.
+- English sites often keep the default English version on `www`, not on `en.`. So for English the candidates are `en.` then `www.`. `firstReachable` skips a host that does not resolve.
+- Verification: unit tests in `test/lib.test.js`.
+- Live check: pending
+
 ## Sticky locale cookies vs the reachability check (2026-10-21)
 
 - cmux.com (Next.js) sets a `NEXT_LOCALE` cookie when the user opens `/pl`.

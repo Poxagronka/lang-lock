@@ -67,6 +67,18 @@ function rewriteLocaleUrl(href, target, pageLang) {
   return null;
 }
 
+// Swap a locale subdomain for the target: "pl.example.com" -> "en.example.com". For English, also the
+// "www" host, where many sites keep their default English version. Only a label that names the page's
+// own language counts, so a host such as "it.example.com" on an English page is left alone.
+function rewriteLocaleHost(href, target, pageLang) {
+  const u = new URL(href);
+  const [label, ...rest] = u.hostname.split('.');
+  const tok = parseToken(label);
+  if (rest.length < 2 || !tok || !sameLang(tok.lang, pageLang) || sameLang(tok.lang, target)) return [];
+  const labels = primary(target) === 'en' ? ['en', 'www'] : [primary(target)];
+  return labels.map((l) => ((u.hostname = [l, ...rest].join('.')), u.href));
+}
+
 // Pick the hreflang alternate for the target: exact match, then the bare primary subtag, then any region.
 function pickAlternate(alternates, target) {
   const t = target.toLowerCase();
@@ -99,6 +111,6 @@ async function firstReachable(candidates, from, token, get = fetch) {
   return sticky;
 }
 
-const LangLock = { primary, sameLang, pageLanguage, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, pickAlternate, firstReachable };
+const LangLock = { primary, sameLang, pageLanguage, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, rewriteLocaleHost, pickAlternate, firstReachable };
 if (typeof module === 'object') module.exports = LangLock;
 else globalThis.LangLock = LangLock;
