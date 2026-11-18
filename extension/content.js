@@ -20,7 +20,8 @@
     if (from) location.replace(from);
     return;
   }
-  if (sessionStorage.getItem(GUARD)) return done('already redirected from here in this tab');
+  // Candidates this tab already navigated to from here. Coming back means that a sticky cookie bounced us: try the next one.
+  const tried = JSON.parse(sessionStorage.getItem(GUARD) || '[]');
   if (target === 'off') return;
   await new Promise((r) => setTimeout(r, SETTLE_MS));
 
@@ -43,13 +44,13 @@
       token,
       ...LangLock.rewriteLocaleHost(location.href, target, pageLang),
     ]),
-  ].filter((u) => u && u !== location.href);
+  ].filter((u) => u && u !== location.href && !tried.includes(u));
   Object.assign(rec, { hreflangs: alternates.map((a) => a.hreflang), candidates });
-  if (!candidates.length) return done('no candidate URL');
+  if (!candidates.length) return done(tried.length ? 'every candidate already tried in this tab' : 'no candidate URL');
 
-  const url = await chrome.runtime.sendMessage({ type: 'redirect', candidates, token });
+  const url = await chrome.runtime.sendMessage({ type: 'redirect', candidates, token, tried });
   if (!url) return done('no candidate reachable, or paused after a recent redirect');
-  sessionStorage.setItem(GUARD, '1');
+  sessionStorage.setItem(GUARD, JSON.stringify([...tried, url]));
   await done(`redirect to ${url}`);
   location.replace(url);
 })();

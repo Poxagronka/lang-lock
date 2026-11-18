@@ -47,12 +47,12 @@ chrome.runtime.onInstalled.addListener(async () => {
 });
 chrome.storage.onChanged.addListener((changes) => changes.lang && applyRules());
 
-async function redirectTarget(tabId, candidates, from, token) {
+async function redirectTarget(tabId, candidates, from, token, tried) {
   const key = `tab${tabId}`;
   const now = Date.now();
   const last = (await chrome.storage.session.get(key))[key];
   if (last && new URL(last.to).origin === new URL(from).origin && now - last.at < REDIRECT_PAUSE_MS) return null;
-  const url = await LangLock.firstReachable(candidates, from, token);
+  const url = await LangLock.firstReachable(candidates, from, token, fetch, tried);
   if (url) await chrome.storage.session.set({ [key]: { at: now, from, to: url } });
   return url;
 }
@@ -65,7 +65,7 @@ async function undoTarget(tabId, url) {
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (!sender.tab) return false;
-  if (msg.type === 'redirect') redirectTarget(sender.tab.id, msg.candidates, sender.url, msg.token).then(sendResponse);
+  if (msg.type === 'redirect') redirectTarget(sender.tab.id, msg.candidates, sender.url, msg.token, msg.tried).then(sendResponse);
   else if (msg.type === 'undo') undoTarget(sender.tab.id, sender.url).then(sendResponse);
   else return false;
   return true;

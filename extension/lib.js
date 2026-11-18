@@ -94,7 +94,8 @@ function pickAlternate(alternates, target) {
 // A candidate that leads back to `from` is a dead end, except the URL token (`token`): a URL that names
 // the target language can reset a sticky site locale on a navigation, never on a fetch (cmux.com sets
 // its NEXT_LOCALE cookie only for Sec-Fetch-Dest: document). Then the token itself is the target.
-async function firstReachable(candidates, from, token, get = fetch) {
+// A candidate that ends on a `tried` URL stays itself: its own hop can set the cookie that the tried URL needs.
+async function firstReachable(candidates, from, token, get = fetch, tried = []) {
   const here = from.split('#')[0];
   let sticky = null;
   for (const url of candidates) {
@@ -102,7 +103,7 @@ async function firstReachable(candidates, from, token, get = fetch) {
       const credentials = new URL(url).origin === new URL(from).origin ? 'include' : 'omit';
       const res = await get(url, { method, redirect: 'follow', credentials, signal: AbortSignal.timeout(4000) }).catch(() => null);
       if (res?.ok) {
-        if (res.url !== here) return res.url;
+        if (res.url !== here) return tried.includes(res.url) ? url : res.url;
         if (url === token) sticky = url;
         break;
       }

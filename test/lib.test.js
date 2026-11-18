@@ -126,3 +126,13 @@ test('rewriteLocaleHost swaps a locale subdomain', () => {
   assert.deepEqual(rewriteLocaleHost('https://pl.com/', 'en', 'pl'), []);
   assert.deepEqual(rewriteLocaleHost('https://en.example.com/', 'en', 'pl'), []);
 });
+
+test('a candidate that ends on an already tried URL is navigated itself: the hop can set a cookie', async () => {
+  // The site's en. host sets a language cookie, then redirects to the apex, which a sticky cookie bounced to the source page.
+  const from = 'https://ru.example.com/';
+  const apex = 'https://example.com/';
+  const en = 'https://en.example.com/';
+  const get = site({ [apex]: apex, [en]: apex });
+  assert.equal(await firstReachable([en], from, null, get, [apex]), en);
+  assert.equal(await firstReachable([apex, en], from, null, get), apex);
+});
