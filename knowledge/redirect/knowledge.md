@@ -1,5 +1,14 @@
 # Redirect knowledge
 
+## Sticky language cookie on a cross-origin candidate (2026-10-31)
+
+- A Django site kept the locale in `django_language`. With that cookie, the apex host (the hreflang target) answers `302` to the locale subdomain. Without it, the apex answers English.
+- `firstReachable` omits credentials cross-origin, so the check saw 200 and the real navigation bounced back. The tab guard then stopped all other candidates.
+- The site's `en.` host sets `en_subdomain=1`, then redirects to the apex. With that cookie the apex stays English. A check that returned the final URL lost this hop.
+- `www` does not reset anything: with the cookie it redirects to the locale subdomain.
+- Fix: the tab guard now holds the list of tried candidates. A return to the page tries the next candidate, so the loop ends after each candidate once. A candidate that ends on a tried URL is navigated itself.
+- `credentials: 'include'` was rejected: it sends cookies to other origins and changes cookie state during a check.
+
 ## Locale only in the subdomain (2026-10-31)
 
 - A search-results page had `<html lang="pl">`, no hreflang links and no locale token in path or query. The locale lived only in the host (`pl.example.com`).
