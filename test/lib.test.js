@@ -157,4 +157,10 @@ test('switcher link: exact language name, and a home link only names the host of
   assert.equal(pickSwitcher([own, { href: 'https://www.example.de/presse/', text: 'English press' }], 'en', 'de', from), null);
   assert.equal(pickSwitcher([own, { href: `${from}#`, text: 'English' }], 'en', 'de', from), null);
   assert.equal(pickSwitcher([own, menu, deep], 'en', 'c++', from), null);
+  // A query that only sets the locale is still a home link.
+  assert.equal(pickSwitcher([own, { href: 'https://www.example.de/?lang=en', text: 'English' }], 'en', 'de', from), null);
+  // Two different deeper links to the other host: no link is known to be this page.
+  assert.equal(pickSwitcher([deep, menu, own, { href: 'https://www.example-europe.com/login', text: 'Login' }], 'en', 'de', from), null);
+  // The same deeper link twice is one link.
+  assert.equal(pickSwitcher([deep, deep, menu, own], 'en', 'de', from), 'https://www.example-europe.com/?pageid=173&artdetail=315');
 });
