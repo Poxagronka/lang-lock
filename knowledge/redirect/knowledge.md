@@ -1,5 +1,15 @@
 # Redirect knowledge
 
+## Language versions on separate domains (2026-11-21)
+
+- A site kept each language on its own registrable domain. A page had `<html lang="de">`, no `<link rel="alternate" hreflang>` and no locale token in path, query or host. Result: "no candidate URL".
+- The page had two signals. A language menu listed the languages by name ("English", "Deutsch"), and each link went to the home page of that domain. A banner link went to the same page on the English domain, but its text did not name a language.
+- The path is translated on the other domain. The same path answers 404 there.
+- Fix: `pickSwitcher` in `extension/lib.js`. It is the last candidate layer, so a site that worked before keeps its behaviour.
+- Rules of the layer: only exact link text counts (the name of the target language in itself or in the page language). The page must also link its own language by name. A home link on another origin only names that origin, and the first deeper link to it is the target. A home link is the target only from a home page.
+- This replaces the earlier "never follow switcher links" decision with the strict form that `research/FINDINGS.md` recommends. The 3 wrong hits there came from `title` and `aria-label` matches.
+- The same site runs a cookie test. A `GET` with no cookies ends on a 200 stub page at another URL. `HEAD` answers 200 with no redirect, so `firstReachable` returns the candidate itself. If `HEAD` failed, `firstReachable` would return the stub URL. Not fixed: no live case yet.
+- Verification: unit test in `test/lib.test.js`. Live check (2026-11-21): Playwright Chromium with the unpacked extension, locale `de-DE`, target `en`. Result: redirect to the banner link, then the site's own 301 to the translated page, `lang=en`.
 ## Sticky language cookie on a cross-origin candidate (2026-10-31)
 
 - A Django site kept the locale in `django_language`. With that cookie, the apex host (the hreflang target) answers `302` to the locale subdomain. Without it, the apex answers English.

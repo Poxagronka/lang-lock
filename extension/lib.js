@@ -90,6 +90,35 @@ function pickAlternate(alternates, target) {
   );
 }
 
+// Pick the site's own language switcher link for the target. Only exact link text counts: the name of the
+// target language in itself or in the page language ("English", "Englisch"). Looser matches (title,
+// aria-label) led to wrong pages in research. The page must also link its own language by name ("Deutsch"),
+// so a stray link named "English" in an article is not a switcher.
+// A switcher often links to the home page of the other version, and from a deeper page that loses the page.
+// Then a home link on another origin only names that origin, and the first deeper link to it is the target.
+// A home link itself is the target only from a home page.
+function pickSwitcher(links, target, pageLang, from) {
+  const [to, own] = [primary(target), primary(pageLang)];
+  if (!parseToken(own)) return null;
+  const name = (lang, locale) => new Intl.DisplayNames([locale], { type: 'language' }).of(lang).toLowerCase();
+  const text = (l) => l.text.trim().toLowerCase();
+  if (!links.some((l) => text(l) === name(own, own))) return null;
+  const names = [name(to, to), name(to, own)];
+  const here = new URL(from);
+  const homePath = (u) => /^\/([a-z]{2}([-_][a-z]{2})?\/?)?$/i.test(u.pathname);
+  const isHome = (u) => homePath(u) && !u.search;
+  for (const l of links) {
+    if (!names.includes(text(l))) continue;
+    const u = new URL(l.href);
+    if (u.href.split('#')[0] === from.split('#')[0]) continue;
+    if (!isHome(u)) return u.href;
+    const deeper = u.origin !== here.origin && links.map((x) => new URL(x.href)).find((x) => x.origin === u.origin && !isHome(x));
+    if (deeper) return deeper.href;
+    if (homePath(here)) return u.href;
+  }
+  return null;
+}
+
 // Final URL of the first candidate that answers 2xx (HEAD, then GET) somewhere other than `from`.
 // A candidate that leads back to `from` is a dead end, except the URL token (`token`): a URL that names
 // the target language can reset a sticky site locale on a navigation, never on a fetch (cmux.com sets
@@ -112,6 +141,6 @@ async function firstReachable(candidates, from, token, get = fetch, tried = []) 
   return sticky;
 }
 
-const LangLock = { primary, sameLang, pageLanguage, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, rewriteLocaleHost, pickAlternate, firstReachable };
+const LangLock = { primary, sameLang, pageLanguage, languageList, acceptLanguage, parseToken, rewriteLocaleUrl, rewriteLocaleHost, pickAlternate, pickSwitcher, firstReachable };
 if (typeof module === 'object') module.exports = LangLock;
 else globalThis.LangLock = LangLock;
