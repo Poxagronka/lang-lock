@@ -4,7 +4,7 @@ const LangLock = require('../extension/lib.js');
 
 globalThis.LangLock = LangLock;
 const { siteRule } = require('../extension/rules.js');
-const { acceptLanguage, languageList, rewriteLocaleUrl, pickAlternate, firstReachable, pageLanguage } = LangLock;
+const { acceptLanguage, languageList, rewriteLocaleUrl, pickAlternate, pickSwitcher, firstReachable, pageLanguage } = LangLock;
 
 test('Accept-Language value', () => {
   assert.equal(acceptLanguage('en'), 'en');
@@ -135,4 +135,32 @@ test('a candidate that ends on an already tried URL is navigated itself: the hop
   const get = site({ [apex]: apex, [en]: apex });
   assert.equal(await firstReachable([en], from, null, get, [apex]), en);
   assert.equal(await firstReachable([apex, en], from, null, get), apex);
+});
+
+test('switcher link: exact language name, and a home link only names the host of the other version', () => {
+  const from = 'https://www.example.de/frauen/zaehne/?utm_source=x';
+  const own = { href: 'https://www.example.de/', text: '\n\t Deutsch ' };
+  const menu = { href: 'https://www.example-europe.com', text: '\n\t English ' };
+  const deep = { href: 'https://www.example-europe.com?pageid=173&artdetail=315', text: 'please visit example-europe.com' };
+  const other = { href: 'https://www.example.fr/', text: 'Français' };
+  // The menu names the English host. The banner link to that host keeps the page.
+  assert.equal(pickSwitcher([deep, menu, own, other], 'en', 'de', from), 'https://www.example-europe.com/?pageid=173&artdetail=315');
+  // A deeper page is not thrown to a home page. A home page is.
+  assert.equal(pickSwitcher([menu, own, other], 'en', 'de', from), null);
+  assert.equal(pickSwitcher([menu, own, other], 'en', 'de', 'https://www.example.de/?utm_source=x'), 'https://www.example-europe.com/');
+  // The name in the page language counts. A same-origin locale home does not, from a deeper page.
+  assert.equal(pickSwitcher([own, { href: 'https://www.example.de/en/zaehne/', text: 'Englisch' }], 'en', 'de', from), 'https://www.example.de/en/zaehne/');
+  assert.equal(pickSwitcher([own, { href: 'https://www.example.de/en/', text: 'English' }], 'en', 'de', from), null);
+  // No link names the page's own language: a link named "English" is not a switcher.
+  assert.equal(pickSwitcher([menu, deep], 'en', 'de', from), null);
+  // Only exact text counts, a link to this page is not a target, and a broken <html lang> gives nothing.
+  assert.equal(pickSwitcher([own, { href: 'https://www.example.de/presse/', text: 'English press' }], 'en', 'de', from), null);
+  assert.equal(pickSwitcher([own, { href: `${from}#`, text: 'English' }], 'en', 'de', from), null);
+  assert.equal(pickSwitcher([own, menu, deep], 'en', 'c++', from), null);
+  // A query that only sets the locale is still a home link.
+  assert.equal(pickSwitcher([own, { href: 'https://www.example.de/?lang=en', text: 'English' }], 'en', 'de', from), null);
+  // Two different deeper links to the other host: no link is known to be this page.
+  assert.equal(pickSwitcher([deep, menu, own, { href: 'https://www.example-europe.com/login', text: 'Login' }], 'en', 'de', from), null);
+  // The same deeper link twice is one link.
+  assert.equal(pickSwitcher([deep, deep, menu, own], 'en', 'de', from), 'https://www.example-europe.com/?pageid=173&artdetail=315');
 });

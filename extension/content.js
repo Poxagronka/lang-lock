@@ -1,5 +1,5 @@
 // ISOLATED world, top frame, document_idle. When the page text is not in the target language,
-// ask the service worker to move to the site's own version: site rule, hreflang, URL locale token, locale subdomain.
+// ask the service worker to move to the site's own version: site rule, hreflang, URL locale token, locale subdomain, switcher link.
 (async () => {
   const SETTLE_MS = 1500; // Let client-side rendering put its text in place first.
   const LOG_SIZE = 50;
@@ -37,12 +37,16 @@
     href: l.href,
   }));
   const token = LangLock.rewriteLocaleUrl(location.href, target, pageLang);
+  const links = [...document.querySelectorAll('a[href]')]
+    .filter((a) => /^https?:$/.test(a.protocol))
+    .map((a) => ({ href: a.href, text: a.textContent }));
   const candidates = [
     ...new Set([
       siteRule(location.href, target),
       LangLock.pickAlternate(alternates, target)?.href,
       token,
       ...LangLock.rewriteLocaleHost(location.href, target, pageLang),
+      LangLock.pickSwitcher(links, target, pageLang, location.href),
     ]),
   ].filter((u) => u && u !== location.href && !tried.includes(u));
   Object.assign(rec, { hreflangs: alternates.map((a) => a.hreflang), candidates });

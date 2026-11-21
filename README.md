@@ -13,8 +13,9 @@ Pick a language in the popup (or "Off"). Lang Lock then works in three layers:
    - the `<link rel="alternate" hreflang>` that matches your language,
    - a rewrite of a locale token that is already in the URL and names the page language (`/el-gr/` → `/en-us/`, `?hl=pl` → `?hl=en`), so a word such as `/id/` or `/it/` is left alone,
    - a locale subdomain that names the page language (`pl.example.com` → `en.example.com`, then `www.example.com` for English).
+   - the site's own language switcher link. Only exact link text counts (`English`, or the name in the page language), and the page must also link its own language by name. A switcher link to a home page is used only from a home page. A link whose query only sets the locale (`/?lang=en`) is a home link too. From a deeper page a home link only names the host of the other version. The target is then the deeper link to that host, when the page has exactly one.
 
-   The service worker checks each candidate with `HEAD` (then `GET`) and uses the first one that answers 2xx and does not bounce back. It redirects at most once per tab in 15 seconds and never twice from the same URL in a tab, so redirect loops cannot happen. If the redirect still lands on a 4xx page (a bot wall can answer the check with 2xx and the browser with 403), the page goes back to where it came from. It never guesses a token that is not in the URL and never clicks switcher links (research showed false positives).
+   The service worker checks each candidate with `HEAD` (then `GET`) and uses the first one that answers 2xx and does not bounce back. It redirects at most once per tab in 15 seconds and never twice from the same URL in a tab, so redirect loops cannot happen. If the redirect still lands on a 4xx page (a bot wall can answer the check with 2xx and the browser with 403), the page goes back to where it came from. It never guesses a token that is not in the URL. It never matches a switcher link by `title` or `aria-label` (research showed false positives).
 
 ### How the MAIN world learns the language
 
